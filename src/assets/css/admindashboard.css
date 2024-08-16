@@ -1,0 +1,210 @@
+.container section.admindashboard {
+  width: 100%;
+  min-height: calc(100vh - 150px);
+  padding: 4em 6em;
+}
+
+.container section.admindashboard .sub_nav {
+  display: flex;
+  align-items: center;
+  gap: 4em;
+  margin: 1em auto;
+}
+.container section.admindashboard .sub_nav li a {
+  color: var(--text);
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 1.4em;
+  font-weight: 600;
+  padding: 0.5em 2em;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 500ms ease-in-out;
+}
+.container section.admindashboard .sub_nav li a.active {
+  color: var(--bg);
+  background: var(--text);
+}
+
+/* FILTERS */
+.container section.admindashboard .filters {
+  width: 100%;
+  min-height: 500px;
+}
+.container section.admindashboard .filters .formcont {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.container section.admindashboard .filters .formcont form {
+  width: 40%;
+  min-height: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.container section.admindashboard .filters h1 {
+  font-weight: 800;
+  font-size: 4em;
+  font-family: "Chakra Petch", sans-serif;
+  color: var(--highlight);
+  margin-top: 0.5em;
+}
+.container section.admindashboard .filters form input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 2em;
+  padding: 0.6em 1.5em;
+  color: var(--text);
+  background: var(--bg);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: var(--bxshadow);
+  margin: 0.5em 0em;
+}
+
+.container section.admindashboard .filters form button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 2em;
+  padding: 0.6em 1.5em;
+  color: var(--bg);
+  background: var(--text);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+  margin: 1em auto;
+}
+
+.container section.admindashboard .filters .box {
+  position: relative;
+}
+.container section.admindashboard .filters .box .rows {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  margin: 2em auto;
+  padding-bottom: 2em;
+  margin-top: 2em;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+}
+.container section.admindashboard .filters .box .deleteBtn {
+  position: absolute;
+  top: 0%;
+  right: 2%;
+  color: var(--header);
+  background: var(--highlight);
+  font-size: 3em;
+  padding: 0.1em 0.2em;
+  padding-bottom: 0em;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+.container section.admindashboard .filters .box .deleteBtn.active{
+    opacity: 1;
+}
+
+.container section.admindashboard .filters .box .rows:last-child {
+  box-shadow: none;
+}
+.container section.admindashboard .filters .box .rows .btn {
+  font-size: 1.2em;
+  padding: 0.8em 1.8em;
+  color: var(--text);
+  cursor: pointer;
+  box-shadow: var(--bxshadow);
+  border-radius: 20px;
+}
+.container section.admindashboard .filters .box .rows .btn.active {
+  transform: scale(1.05);
+  color: var(--bg);
+  background: var(--text);
+}
+
+
+
+
+
+
+/* ************MEDIA QUERRY********************** */
+
+/* ********@MOBILE********* */
+
+@media (max-width: 767px) {
+  .container section.admindashboard {
+    padding: 4em 2em;
+  }
+  
+  .container section.admindashboard .sub_nav {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    margin: 1em auto;
+  }
+  .container section.admindashboard .sub_nav li a {
+    font-size: 1.2em;
+    padding: 0.5em 1.4em;
+  }
+  
+
+/* FILTERS */
+.container section.admindashboard .filters {
+  width: 100%;
+  min-height: 500px;
+}
+.container section.admindashboard .filters .formcont {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  /*  */
+  flex-direction: column;
+}
+.container section.admindashboard .filters .formcont form {
+  width: 100%;
+}
+.container section.admindashboard .filters h1 {
+  font-size: 2em;
+}
+.container section.admindashboard .filters form input {
+  font-size: 1.8em;
+}
+
+.container section.admindashboard .filters form button {
+  font-size: 1.8em;
+  font-weight: 600;
+}
+
+.container section.admindashboard .filters .box {
+  margin-top: 2em;
+}
+.container section.admindashboard .filters .box .rows {
+  gap: 1.5em;
+}
+.container section.admindashboard .filters .box .deleteBtn {
+  font-size: 2em;
+}
+.container section.admindashboard .filters .box .rows .btn {
+  font-size: 1em;
+}
+
+}

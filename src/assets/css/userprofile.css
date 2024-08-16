@@ -1,0 +1,143 @@
+.container section.userdashboard .profile {
+  width: 100%;
+  min-height: 100vh;
+}
+.container section.userdashboard .profile form {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 6em;
+}
+
+.container section.userdashboard .profile form .dpInt {
+  display: none;
+}
+
+.container section.userdashboard .profile form label {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.container section.userdashboard .profile form label img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.container section.userdashboard .profile form .txtcont {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6em;
+  height: auto;
+  width: calc(100% - 250px);
+  border-radius: 10px;
+}
+
+.container section.userdashboard .profile form .txtcont .rows {
+  width: 400px;
+}
+.container section.userdashboard .profile form .txtcont .rows label {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  font-weight: 800;
+  font-size: 1.4em;
+  gap: 0.4em;
+  font-family: "Chakra Petch", sans-serif;
+  color: var(--text);
+}
+.container section.userdashboard .profile form .txtcont .rows label .icon {
+  font-size: 1.4em;
+  color: var(--highlight);
+}
+
+.container section.userdashboard .profile form .txtcont .rows.bio {
+  width: 100%;
+}
+.container section.userdashboard .profile form .txtcont .rows input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 2em;
+  padding: 0.6em 1.5em;
+  color: var(--text);
+  background: var(--bg);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: var(--bxshadow);
+  margin: 0.5em 0em;
+}
+
+.container section.userdashboard .profile form .txtcont .rows textarea {
+  display: flex;
+  width: 100%;
+  height: 200px;
+  align-items: center;
+  gap: 0.5em;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 2em;
+  padding: 0.6em 1.5em;
+  color: var(--text);
+  background: var(--bg);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: var(--bxshadow);
+  margin: 0.5em 0em;
+}
+.container section.userdashboard .profile form .txtcont .rows button {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 2em;
+  padding: 0.6em 1.5em;
+  color: var(--bg);
+  background: var(--text);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+  margin: 2em auto;
+}
+
+
+
+
+
+
+/* ************MEDIA QUERRY********************** */
+
+/* ********@MOBILE********* */
+
+@media (max-width: 767px) {
+  .container section.userdashboard .profile {
+    width: 100%;
+    min-height: 100vh;
+  }
+  .container section.userdashboard .profile form {
+    /*  */
+    flex-direction: column;
+    align-items: center;
+    gap: 4em;
+  }
+  .container section.userdashboard .profile form .txtcont {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .container section.userdashboard .profile form .txtcont .rows button {
+    width: 80%;
+  }
+}

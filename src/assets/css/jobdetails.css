@@ -1,0 +1,274 @@
+.container section.job {
+  padding-top: 6em;
+}
+
+.container section.job main {
+  width: 80%;
+  min-height: 70vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 4em;
+  margin: 0em auto;
+  padding-top: 8em;
+  position: relative;
+  /* border: 2px solid; */
+}
+
+.container section.job main .btnBack {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 1.4em;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em auto;
+  gap: 0.2em;
+  color: var(--bg);
+  border: none;
+  outline: none;
+  background: var(--text);
+  cursor: pointer;
+  padding: 1em 0em;
+  box-shadow: var(--bxshadow);
+  border-radius: 20px;
+  position: absolute;
+  top: 0;
+  left: -5%;
+}
+
+.container section.job main .child {
+  width: 70%;
+  height: inherit;
+}
+
+.container section.job main .child h2 {
+  font-size: 2em;
+  font-family: "Chakra Petch", sans-serif;
+  color: var(--highlight);
+}
+.container section.job main .child h1 {
+  font-size: 3em;
+  font-family: "Chakra Petch", sans-serif;
+  color: var(--text);
+  margin: 0.5em auto;
+}
+.container section.job main .child h3 {
+  font-size: 2em;
+  font-family: "Chakra Petch", sans-serif;
+  color: var(--text);
+}
+.container section.job main .child p {
+  font-family: mona, sans-serif;
+  font-size: 14px;
+  line-height: 25px;
+  color: var(--text);
+  margin: 1em auto;
+}
+.container section.job main .child li p {
+  font-size: 14px;
+}
+.container section.job main .child a {
+  color: var(--highlight);
+  font-weight: 800;
+}
+.container section.job main .child li {
+  font-family: mona, sans-serif;
+  font-size: 14px;
+  line-height: 25px;
+  color: var(--text);
+  margin: 1em auto;
+}
+
+.container section.job main .child .applyBtn {
+  width: 40%;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 1.4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2em;
+  color: var(--bg);
+  border: none;
+  outline: none;
+  background: var(--text);
+  cursor: pointer;
+  padding: 1em 1.8em;
+  box-shadow: var(--bxshadow);
+  border-radius: 20px;
+  transition: background 500ms ease-in-out;
+}
+.container section.job main .sib {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: auto;
+  padding: 2em 1em;
+}
+
+.container section.job main .sib .sibcont {
+  width: 100%;
+  min-height: 400px;
+  font-family: "Chakra Petch", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em 2em;
+  border-radius: 5px;
+  box-shadow: var(--bxshadow);
+}
+.container section.job main .sib .sibcont img {
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.container section.job main .sib .sibcont h1 {
+  color: var(--text);
+  font-size: 2em;
+  margin: 0.5em;
+}
+
+.container section.job main .sib .sibcont .shareconts {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 1em;
+  margin: 2em auto;
+}
+.container section.job main .sib .sibcont .shareconts .btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 1.6em;
+  padding: 0.6em 1.5em;
+  color: var(--bg);
+  background: var(--text);
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.container section.job main .sib .sibcont ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+.container section.job main .sib .sibcont ul li {
+  color: var(--text);
+  width: 100%;
+  font-size: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0.5em auto;
+  list-style: none;
+}
+.container section.job main .sib .sibcont ul li span:first-child {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  text-align: left;
+  margin: 0.2em 0em;
+}
+.container section.job main .sib .sibcont ul li span:last-child {
+  font-weight: 400;
+}
+/* .container section.job main .sib .sibcont ul li.pr span{
+  font-family: "Chakra Petch", sans-serif;
+} */
+.container section.job main .sib .sibcont ul li.pr span:last-child {
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.container section.job main .sib .sibcont .applyBtn {
+  width: 80%;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 1.4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em auto;
+  color: var(--bg);
+  border: none;
+  outline: none;
+  background: var(--text);
+  cursor: pointer;
+  padding: 1em 1.8em;
+  box-shadow: var(--bxshadow);
+  border-radius: 20px;
+  transition: background 500ms ease-in-out;
+}
+
+.container section.job main .sib ul li a {
+  color: var(--text);
+}
+
+/* 
+.container section.job main .sib .secsib {
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: "Chakra Petch", sans-serif;
+    padding: 1em 2em;
+    margin-top: 4em;
+    text-align: left;
+  }
+
+.container section.job main .sib .secsib h2 {
+    font-size: 2em;
+color: var(--text);
+margin: 0.5em 0em;
+}
+.container section.job main .sib .secsib li a{
+    display: block;
+    font-size: 1.4em;
+color: var(--text);
+margin: 0.5em 0em;
+} */
+
+/* ************MEDIA QUERRY********************** */
+
+/* ********@MOBILE********* */
+
+@media (max-width: 767px) {
+  .container section.job {
+    padding-top: 4em;
+  }
+  .container section.job main {
+    width: 100%;
+    padding: 2em 2em;
+    padding-top: 8em;
+    position: relative;
+    flex-direction: column;
+  }
+
+  .container section.job main .btnBack {
+    font-size: 1em;
+    width: 100px;
+    left: 1.5%;
+  }
+  .container section.job main .child p {
+    word-break: break-all;
+  }
+  .container section.job main .child {
+    width: 100%;
+    height: inherit;
+  }
+  .container section.job main .child button {
+    width: 80%;
+  }
+  .container section.job main .child .applyBtn {
+    width: 80%;
+  }
+  .container section.job main .sib {
+    width: 100%;
+  }
+}

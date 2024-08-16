@@ -1,0 +1,449 @@
+.container section.degen {
+  padding: 0em 6em;
+  padding-top: 6em;
+}
+
+.container section.degen h1 {
+  font-size: 6em;
+  font-family: "Chakra Petch", sans-serif;
+  color: var(--text);
+  margin: 0.5em auto;
+}
+
+.container section.degen {
+  width: 100%;
+  height: auto;
+  padding: 0em 6em;
+  /* border: 2px solid; */
+}
+.container section.degen .child {
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 6em;
+}
+
+.container section.degen .child main {
+  width: 70%;
+  /* border: 2px solid; */
+}
+.container section.degen .child main form {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0em 2em;
+  margin-top: 2em;
+  border-radius: 30px;
+  color: var(--text);
+  box-shadow: var(--bxshadow);
+}
+.container section.degen .child main form input {
+  color: var(--text);
+  width: calc(100% - 30px);
+  height: 40px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: "Inter", sans-serif;
+}
+.container section.degen .child main form .icon {
+  font-size: 2.4em;
+  cursor: pointer;
+}
+
+.container section.degen .child main .txtcont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container section.degen .child main h1 {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 2.5em;
+  margin: 1em 0em;
+  margin-top: 2em;
+}
+.container section.degen .child main h2 {
+  font-family: mona;
+  font-weight: 500;
+  font-size: 1.4em;
+  margin: 1em 0em;
+  margin-bottom: 4em;
+}
+.container section.degen .child main .rows {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4em;
+}
+.container section.degen .child main .rows .box {
+  width: 400px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0em 1em;
+  cursor: pointer;
+  color: var(--text);
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--bxshadow);
+}
+.container section.degen .child main .rows .box.highlight {
+  background: var(--bg);
+}
+.container section.degen .child main .rows .box::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0%;
+  top: 0%;
+  background: rgba(0, 0, 0, 0.1);
+  transform: translateY(-100%);
+  z-index: 2;
+  border-radius: inherit;
+}
+.container section.degen .child main .rows .box:hover::before {
+  transform: translateY(0%);
+}
+
+.container section.degen .child main .rows .box .dpcont {
+  display: flex;
+  gap: 2em;
+  align-items: center;
+}
+
+.container section.degen .child main .rows .box .dpcont img {
+  display: block;
+  object-fit: cover;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  color: var(--text);
+}
+.container section.degen .child main .rows .box .dpcont h3 {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 2em;
+  font-weight: 600;
+  gap: 0.5em;
+}
+.container section.degen .child main .rows .box .dpcont h4 {
+  font-size: 1.4em;
+  font-weight: 400;
+  margin-top: 0.5em;
+}
+
+.container section.degen .child main .rows .box ul {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.4em;
+}
+.container section.degen .child main .rows .box ul li a {
+  font-size: 2em;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.container section.degen .child main .rows .box .view {
+  display: flex;
+  gap: 2em;
+  margin-top: 1em;
+  position: absolute;
+  right: 1%;
+  opacity: 0;
+  transform: translateY(-10%);
+  transition: 500ms ease-in-out;
+  z-index: 3;
+}
+.container section.degen .child main .rows .box .view .btn {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 1.4em;
+  font-weight: 500;
+  padding: 0.7em 1.5em;
+  border-radius: 20px;
+  cursor: pointer;
+  color: var(--text);
+  background: var(--bg);
+  box-shadow: var(--bxshadow);
+}
+
+.container section.degen .child main .rows .box:hover .cont {
+  opacity: 0;
+}
+.container section.degen .child main .rows .box:hover .view {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+.container section.degen .child main .rows .morecont {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em; 
+}
+
+.container section.degen .child main .rows .morecont .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  font-family: mona, sans-serif;
+  font-size: 1.4em;
+  font-weight: 500;
+  border-radius: 50%;
+  color: var(--text);
+  background: var(--bg);
+  cursor: pointer;
+  transition: 500ms ease-in-out;
+}
+.container section.degen .child main .rows .morecont .btn.active {
+  transform: scale(1.1);
+  color: var(--header);
+  background: var(--highlight);
+}
+.container section.degen .child main .rows .morecont .prev {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: mona, sans-serif;
+  font-size: 1.4em;
+  padding: 0.5em 1em;
+  font-weight: 500;
+  border-radius: 5px;
+  color: var(--text);
+  background: var(--bg);
+  cursor: pointer;
+  transition: 500ms ease-in-out;
+  margin-right: 0.5em;
+  box-shadow: var(--bxshadow);
+}
+.container section.degen .child main .rows .morecont .next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: mona, sans-serif;
+  font-size: 1.4em;
+  padding: 0.5em 1em;
+  font-weight: 500;
+  border-radius: 5px;
+  color: var(--text);
+  background: var(--bg);
+  cursor: pointer;
+  transition: 500ms ease-in-out;
+  margin-left: 0.5em;
+  box-shadow: var(--bxshadow);
+}
+.container section.degen .child main .rows .morecont .prev:hover,
+.container section.degen .child main .rows .morecont .next:hover {
+  transform: scale(1.05);
+  color: var(--header);
+  background: var(--highlight);
+}
+
+/* searchCont */
+.container section.degen .child .searchCont {
+  width: 30%;
+  min-height: 500px;
+
+  border-radius: 10px;
+  margin-top: 8em;
+  padding: 3em 3em;
+  box-shadow: var(--bxshadow);
+}
+.container section.degen .child .searchCont h1 {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 3em;
+  color: var(--text);
+}
+.container section.degen .child  h4.filter {
+  display: none;
+}
+.container section.degen .child .searchCont .rows {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  margin: 2em auto;
+  padding-bottom: 2em;
+  margin-top: 2em;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+}
+.container section.degen .child .searchCont .rows:last-child {
+  box-shadow: none;
+}
+.container section.degen .child .searchCont .rows .btn {
+  font-size: 1.2em;
+  padding: 0.8em 1.8em;
+  color: var(--text);
+  cursor: pointer;
+  box-shadow: var(--bxshadow);
+  border-radius: 20px;
+}
+.container section.degen .child .searchCont .rows .select {
+  width: 100%;
+  cursor: pointer;
+}
+.container section.degen .child .searchCont .rows .btn.active {
+  color: var(--bg);
+  background: var(--text);
+}
+
+.container section.degen .child .searchCont button {
+  width: 80%;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 1.4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em auto;
+  color: var(--bg);
+  border: none;
+  outline: none;
+  background: var(--text);
+  cursor: pointer;
+  padding: 1em 1.8em;
+  box-shadow: var(--bxshadow);
+  border-radius: 20px;
+  transition: background 500ms ease-in-out;
+}
+.container section.degen .child .searchCont button:hover {
+  color: var(--bg);
+  background: var(--text);
+}
+
+.container section.degen .child .searchCont .cancelBtn {
+ display: none;
+}
+
+
+
+
+/* ************MEDIA QUERRY********************** */
+
+/* ********@MOBILE********* */
+
+@media (max-width: 767px) {
+  .container section.degen {
+    padding: 0em 1em;
+    padding-top: 6em;
+  }
+
+  .container section.degen h1 {
+    font-size: 3em;
+  }
+  
+  .container section.degen .child .txtcont {
+    display: flex;
+    align-items: center;
+  }
+  .container section.degen .child h4.filter {
+    font-family: "Chakra Petch", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2em;
+    font-size: 1.4em;
+    color: var(--text);
+    cursor: pointer;
+  }
+  .container section.degen {
+    padding: 0em 1em;
+  }
+  .container section.degen .child {
+    gap: 4em;
+  }
+
+  .container section.degen .child main {
+    width: 100%;
+  }
+  .container section.degen .child main form {
+    height: 40px;
+  }
+  .container section.degen .child main form input {
+    height: 30px;
+  }
+  .container section.degen .child main form .icon {
+    font-size: 2em;
+    cursor: pointer;
+  }
+  /*  */
+  .container section.degen .child main .rows .morecont {
+    height: 50px;
+    display: flex;
+    gap: 0.5em;
+  }
+  .container section.degen .child main .rows .morecont .btn {
+    width: 15px;
+    height: 15px;
+    font-size: 1em;
+  }
+  .container section.degen .child main .rows .morecont .prev {
+    font-size: 1em;
+  }
+  .container section.degen .child main .rows .morecont .next {
+    font-size: 1em;
+  }
+
+  /* searchCont */
+  .container section.degen .child .searchCont {
+    width: 100%;
+    height: 100vh;
+    margin-top: 8em;
+    padding: 3em 1em;
+    background: var(--bg);
+    box-shadow: var(--bxshadow);
+    position: fixed;
+    top: -9%;
+    left: 0%;
+    z-index: 99999999999;
+    overflow: scroll;
+    transition: transform 500ms ease-in-out;
+    transform: translateX(-100%);
+    padding-bottom: 5em;
+  }
+  .container section.degen .child .searchCont .cancelBtn {
+    display: flex;
+    font-size: 3em;
+    position: absolute;
+    color: var(--text);
+    top: 5%;
+    right: 1%;
+    cursor:cell;
+  }
+  .container section.degen .child .searchCont.active {
+    transform: translateX(0%);
+  }
+  .container section.degen .child .searchCont h1 {
+    font-size: 3em;
+    color: var(--text);
+    position: sticky;
+  }
+
+  .container section.degen .child .searchCont .rows {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    margin: 2em auto;
+    padding-bottom: 2em;
+    margin-top: 2em;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+  }
+  .container section.degen .child .searchCont .rows:last-child {
+    box-shadow: none;
+  }
+ 
+  
+}

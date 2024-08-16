@@ -1,0 +1,42 @@
+.container section.userdashboard {
+  width: 100%;
+  min-height: calc(100vh - 150px);
+  padding: 4em 6em;
+}
+
+.container section.userdashboard .sub_nav {
+  display: flex;
+  align-items: center;
+  gap: 4em;
+  margin: 1em auto;
+}
+.container section.userdashboard .sub_nav li a {
+  color: var(--text);
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 1.4em;
+  font-weight: 600;
+  padding: 0.5em 2em;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 500ms ease-in-out;
+}
+.container section.userdashboard .sub_nav li a.active {
+  color: var(--bg);
+  background: var(--text);
+}
+
+
+
+
+
+
+
+/* ************MEDIA QUERRY********************** */
+
+/* ********@MOBILE********* */
+
+@media (max-width: 767px) {
+  .container section.userdashboard {
+    padding: 4em 2em;
+  }
+}

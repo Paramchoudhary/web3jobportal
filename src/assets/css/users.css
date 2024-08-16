@@ -1,0 +1,482 @@
+.container section.admindashboard .users {
+  width: 70%;
+  margin: 1em auto;
+  margin-top: 4em;
+}
+.container section.admindashboard .users {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0em 1em;
+  cursor: pointer;
+  color: var(--text);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.container section.admindashboard .users .rows {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4em;
+}
+.container section.admindashboard .users .rows .box {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0em 1em;
+  cursor: pointer;
+  color: var(--text);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--bxshadow);
+}
+
+.container section.admindashboard .users .rows .box::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0%;
+  top: 0%;
+  background: rgba(0, 0, 0, 0.1);
+  transform: translateY(-100%);
+  z-index: 1;
+  border-radius: inherit;
+}
+.container section.admindashboard .users .rows .box:hover::before {
+  transform: translateY(0%);
+}
+
+.container section.admindashboard .users .rows .box .dpcont {
+  display: flex;
+  gap: 2em;
+}
+
+.container section.admindashboard .users .rows .box .dpcont .dp {
+  display: block;
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  color: var(--text);
+}
+.container section.admindashboard .users .rows .box .dpcont h3 {
+  font-size: 1.5em;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.container section.admindashboard .users .rows .box .dpcont h4 {
+  font-size: 2em;
+  font-weight: 400;
+  margin-top: 0.5em;
+}
+.container section.admindashboard .users .rows .box .dpcont h4 span {
+  font-size: 0.7em;
+  padding: 0.4em 0.5em;
+  box-shadow: var(--bxshadow);
+  border-radius: 10px;
+  margin-left: 2em;
+}
+
+.container section.admindashboard .users .rows .box .dpcont ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  margin-top: 1.5em;
+}
+.container section.admindashboard .users .rows .box .dpcont ul li {
+  font-size: 1em;
+  font-weight: 500;
+  padding: 0.7em 1.5em;
+  border-radius: 20px;
+  cursor: pointer;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.container section.admindashboard .users .rows .box .cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 1;
+  /* transition: opacity 500ms ease-in-out; */
+}
+.container section.admindashboard .users .rows .box .cont .prime {
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 0.7em 1.5em;
+  border-radius: 20px;
+  color: var(--highlight);
+  cursor: pointer;
+  background: var(--bg);
+}
+.container section.admindashboard .users .rows .box .cont .loc {
+  font-size: 1.4em;
+  font-weight: 500;
+  padding: 0.7em 1.5em;
+  color: var(--text);
+  font-family: mona, sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 0.2em;
+  margin-top: 1em;
+}
+.container section.admindashboard .users .rows .box .view {
+  display: flex;
+  gap: 2em;
+  margin-top: 1em;
+  position: absolute;
+  right: 1%;
+  opacity: 0;
+  transform: translateY(-10%);
+  transition: 500ms ease-in-out;
+  z-index: 1;
+}
+.container section.admindashboard .users .rows .box .view .btn {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 1.4em;
+  font-weight: 500;
+  padding: 0.7em 1.5em;
+  border-radius: 20px;
+  cursor: pointer;
+  color: var(--text);
+  background: var(--bg);
+  box-shadow: var(--bxshadow);
+}
+
+.container section.admindashboard .users .rows .box:hover .cont {
+  opacity: 0;
+}
+.container section.admindashboard .users .rows .box:hover .view {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+.container section.admindashboard .users .rows .morecont {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.container section.admindashboard .users .rows .morecont .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  font-family: mona, sans-serif;
+  font-size: 1.4em;
+  font-weight: 500;
+  border-radius: 50%;
+  color: var(--text);
+  background: var(--bg);
+  cursor: pointer;
+  transition: 500ms ease-in-out;
+}
+.container section.admindashboard .users .rows .morecont .btn.active {
+  transform: scale(1.1);
+  color: var(--header);
+  background: var(--highlight);
+}
+.container section.admindashboard .users .rows .morecont .prev {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: mona, sans-serif;
+  font-size: 1.4em;
+  padding: 0.5em 1em;
+  font-weight: 500;
+  border-radius: 5px;
+  color: var(--text);
+  background: var(--bg);
+  cursor: pointer;
+  transition: 500ms ease-in-out;
+  margin-right: 0.5em;
+  box-shadow: var(--bxshadow);
+}
+.container section.admindashboard .users .rows .morecont .next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: mona, sans-serif;
+  font-size: 1.4em;
+  padding: 0.5em 1em;
+  font-weight: 500;
+  border-radius: 5px;
+  color: var(--text);
+  background: var(--bg);
+  cursor: pointer;
+  transition: 500ms ease-in-out;
+  margin-left: 0.5em;
+  box-shadow: var(--bxshadow);
+}
+.container section.admindashboard .users .rows .morecont .prev:hover,
+.container section.admindashboard .users .rows .morecont .next:hover {
+  transform: scale(1.05);
+  color: var(--header);
+  background: var(--highlight);
+}
+
+.container section.admindashboard .users .userModal {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999999;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.container section.admindashboard .users .userModal .box {
+  width: 450px;
+  min-height: 200px;
+  font-family: "Chakra Petch", sans-serif;
+  background: var(--bg);
+  padding: 4em 2em;
+  padding-top: 6em;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 2.6px 5.1px 5.1px rgba(0, 0, 0, 0.4);
+}
+.container section.admindashboard .users .userModal .box .cancel {
+  position: absolute;
+  top: 3%;
+  right: 2.5%;
+  font-size: 3em;
+  color: var(--text);
+  text-align: center;
+  z-index: 4;
+  cursor: pointer;
+}
+
+.container section.admindashboard .users .userModal .box h2 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin: 1em auto;
+  text-align: center;
+}
+.container section.admindashboard .users .userModal .box h2 span {
+  color: var(--text);
+}
+
+.container section.admindashboard .users .userModal .box img {
+  object-fit: contain;
+  width: 100%;
+}
+
+.container section.admindashboard .users .userModal .box input {
+  width: 100%;
+  height: 50px;
+  color: var(--text);
+  padding: 0 1em;
+  border-radius: 5px;
+  font-family: "Chakra Petch", sans-serif;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 2em;
+  color: var(--text);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 2px;
+  margin-top: 0.5em;
+}
+.container section.admindashboard .users .userModal .box label {
+  display: block;
+  font-size: 1.4em;
+  color: var(--text);
+  margin-top: 2em;
+}
+.container section.admindashboard .users .userModal .box .btns {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 4em;
+}
+.container section.admindashboard .users .userModal .box .btns button {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  margin-left: 10px;
+  border: none;
+  outline: none;
+  color: var(--bg);
+  letter-spacing: 1px;
+  font-size: 1.2em;
+  font-family: "Chakra Petch", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 7px;
+  margin-top: 3em;
+  cursor: pointer;
+  background-color: var(--text);
+}
+
+/* ************MEDIA QUERRY********************** */
+
+/* ********@MOBILE********* */
+
+@media (max-width: 767px) {
+  .container section.admindashboard .users .rows {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4em;
+  }
+  .container section.admindashboard .users .rows .box {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0em 1em;
+    cursor: pointer;
+    color: var(--text);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--bxshadow);
+  }
+  .container section.admindashboard .users .rows .box.highlight {
+    background: var(--header2);
+  }
+  .container section.admindashboard .users .rows .box::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+    background: rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    z-index: 1;
+    border-radius: inherit;
+  }
+  .container section.admindashboard .users .rows .box:hover::before {
+    transform: translateY(0%);
+  }
+
+  /*  */
+  .container section.admindashboard .users .rows {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4em;
+  }
+  .container section.admindashboard .users .rows .box {
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em 1em;
+  }
+
+  .container section.admindashboard .users .rows .box .dpcont {
+    width: 100%;
+    display: flex;
+    gap: 2em;
+    justify-content: flex-start;
+  }
+
+  .container section.admindashboard .users .rows .box .dpcont .dp {
+    display: block;
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    color: var(--text);
+  }
+  .container section.admindashboard .users .rows .box .dpcont h3 {
+    font-size: 1.2em;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+
+  .container section.admindashboard .users .rows .box .dpcont h4 {
+    font-size: 1.4em;
+    font-weight: 400;
+    margin-top: 0.5em;
+  }
+  .container section.admindashboard .users .rows .box .dpcont h4 span {
+    display: inline-block;
+    margin-left: 2em;
+    margin-top: 0.5em;
+  }
+
+  .container section.admindashboard .users .rows .box .dpcont ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    margin-top: 1em;
+  }
+  .container section.admindashboard .users .rows .box .dpcont ul li {
+    font-size: 1em;
+    font-weight: 500;
+    padding: 0.7em 1.5em;
+    border-radius: 20px;
+    cursor: pointer;
+    color: var(--text);
+    background: var(--bg);
+  }
+
+  .container section.admindashboard .users .rows .box .cont {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    opacity: 1;
+  }
+  .container section.admindashboard .users .rows .box .cont .prime {
+    font-size: 0.8em;
+  }
+  .container section.admindashboard .users .rows .box .cont .loc {
+    font-size: 1em;
+  }
+  .container section.admindashboard .users .rows .box .view .btn {
+    font-size: 1.2em;
+  }
+
+  .container section.admindashboard .users .rows .box:hover .cont {
+    opacity: 1;
+  }
+
+  .container section.admindashboard .users .rows .morecont {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 0.5em;
+  }
+  .container section.admindashboard .users .rows .morecont .btn {
+    width: 15px;
+    height: 15px;
+    font-size: 1em;
+  }
+  .container section.admindashboard .users .rows .morecont .prev {
+    font-size: 1em;
+  }
+  .container section.admindashboard .users .rows .morecont .next {
+    font-size: 1em;
+  }
+}

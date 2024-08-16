@@ -1,0 +1,702 @@
+/* 
+   font-family: "Inter", sans-serif;
+    font-family: "Chakra Petch", sans-serif;
+font-family: "Andika", sans-serif;
+ */
+
+.container section.home header {
+  width: 800px;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4em;
+  margin: 0em auto;
+  color: var(--text);
+  /* border: 2px solid; */
+}
+.container section.home header h1 {
+  font-size: 6em;
+  font-family: SemiBoldItalic;
+  text-align: center;
+  line-height: 1.05em;
+  padding: 0.7em 1em;
+  border-radius: 5px;
+  box-shadow: rgba(38, 255, 34, 0.2) 0px 7px 29px 0px;
+}
+.container section.home header h1 span {
+  color: var(--highlight);
+}
+.container section.home header p {
+  font-size: 2em;
+  font-weight: 400;
+  text-align: center;
+  line-height: 30px;
+  margin-top: 2em;
+}
+
+.container section.home header a {
+  width: 150px;
+  height: 50px;
+  font-family: mona;
+  font-family: SemiBoldItalic;
+  font-weight: 600;
+  font-size: 1.6em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--header3);
+  background: var(--primary);
+  border-radius: 30px;
+}
+
+.container section.home .jobsCont {
+  width: 100%;
+  height: auto;
+  padding: 0em 6em;
+  /* border: 2px solid; */
+}
+
+.container section.home .jobsCont ul {
+  display: flex;
+  align-items: center;
+  gap: 4em;
+}
+.container section.home .jobsCont ul li {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 1.2em;
+  font-weight: 600;
+  padding: 1em 1.5em;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 500ms ease-in-out;
+}
+.container section.home .jobsCont ul li a {
+  color: var(--text);
+}
+.container section.home .jobsCont ul li.active {
+  background: var(--header);
+}
+.container section.home .jobsCont ul li.filter {
+  display: none;
+}
+.container section.home .jobsCont .child {
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 6em;
+}
+
+.container section.home .jobsCont .child main {
+  width: 70%;
+  /* border: 2px solid; */
+}
+.container section.home .jobsCont .child main form {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0em 2em;
+  margin-top: 2em;
+  border-radius: 30px;
+  box-shadow: var(--bxshadow);
+}
+.container section.home .jobsCont .child main form input {
+  color: var(--text);
+  width: calc(100% - 30px);
+  height: 40px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: "Inter", sans-serif;
+}
+.container section.home .jobsCont .child main form .icon {
+  color: var(--text);
+  font-size: 2.4em;
+  cursor: pointer;
+}
+
+.container section.home .jobsCont .child main h1 {
+  color: var(--text);
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 2.5em;
+  margin: 1em 0em;
+  margin-top: 2em;
+}
+.container section.home .jobsCont .child main h2 {
+  color: var(--text);
+  font-family: mona;
+  font-weight: 500;
+  font-size: 1.4em;
+  margin: 1em 0em;
+  margin-bottom: 4em;
+}
+.container section.home .jobsCont .child main .rows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4em;
+}
+.container section.home .jobsCont .child main .rows .box {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0em 1em;
+  cursor: pointer;
+  color: var(--text);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--bxshadow);
+  font-family: "Chakra Petch", sans-serif;
+}
+.container section.home .jobsCont .child main .rows .box.highlight {
+  background: var(--header2);
+}
+.container section.home .jobsCont .child main .rows .box::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0%;
+  top: 0%;
+  background: rgba(0, 0, 0, 0.1);
+  transform: translateY(-100%);
+  z-index: 1;
+  border-radius: inherit;
+}
+.container section.home .jobsCont .child main .rows .box:hover::before {
+  transform: translateY(0%);
+}
+
+.container section.home .jobsCont .child main .rows .box .dpcont {
+  display: flex;
+  gap: 2em;
+}
+
+.container section.home .jobsCont .child main .rows .box .dpcont .dp {
+  display: block;
+  object-fit: cover;
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  color: var(--text);
+}
+.container section.home .jobsCont .child main .rows .box .dpcont .subtext {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  flex-shrink: 0;
+}
+.container section.home .jobsCont .child main .rows .box .dpcont .subtext h3 {
+  font-size: 1.2em;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+}
+.container
+  section.home
+  .jobsCont
+  .child
+  main
+  .rows
+  .box
+  .dpcont
+  .subtext
+  .company_logo {
+  flex-shrink: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.container section.home .jobsCont .child main .rows .box .dpcont h4 {
+  font-size: 1.4em;
+  font-weight: 600;
+  margin-top: 0.5em;
+}
+.container section.home .jobsCont .child main .rows .box .dpcont h4 span {
+  font-size: 0.7em;
+  padding: 0.2em 0.4em;
+  border: 1px solid var(--text);
+  border-radius: 10px;
+  margin-left: 2em;
+}
+
+.container section.home .jobsCont .child main .rows .box .dpcont ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  margin-top: 1em;
+}
+.container section.home .jobsCont .child main .rows .box .dpcont ul li {
+  font-size: 1em;
+  font-weight: 500;
+  padding: 0.7em 1.5em;
+  border-radius: 20px;
+  cursor: pointer;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.container section.home .jobsCont .child main .rows .box .cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 1;
+  /* transition: opacity 500ms ease-in-out; */
+}
+.container section.home .jobsCont .child main .rows .box .cont .prime {
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 0.7em 1.5em;
+  border-radius: 20px;
+  color: var(--highlight);
+  cursor: pointer;
+  background: var(--bg);
+}
+.container section.home .jobsCont .child main .rows .box .cont .loc {
+  font-size: 1.4em;
+  font-weight: 500;
+  padding: 0.7em 1.5em;
+  color: var(--text);
+  font-family: mona, sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 0.2em;
+  margin-top: 1em;
+}
+.container section.home .jobsCont .child main .rows .box .view {
+  display: flex;
+  gap: 2em;
+  margin-top: 1em;
+  position: absolute;
+  right: 1%;
+  opacity: 0;
+  transform: translateY(-10%);
+  transition: 500ms ease-in-out;
+  z-index: 1;
+}
+.container section.home .jobsCont .child main .rows .box .view .btn {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 1.4em;
+  font-weight: 500;
+  padding: 0.7em 1.5em;
+  border-radius: 20px;
+  cursor: pointer;
+  color: var(--text);
+  background: var(--bg);
+  box-shadow: var(--bxshadow);
+}
+
+.container section.home .jobsCont .child main .rows .box:hover .cont {
+  opacity: 0;
+}
+.container section.home .jobsCont .child main .rows .box:hover .view {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+.container section.home .jobsCont .child main .rows .morecont {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+.container section.home .jobsCont .child main .rows .morecont .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  font-family: mona, sans-serif;
+  font-size: 1.4em;
+  font-weight: 500;
+  border-radius: 50%;
+  color: var(--text);
+  background: var(--bg);
+  cursor: pointer;
+  transition: 500ms ease-in-out;
+}
+.container section.home .jobsCont .child main .rows .morecont .btn.active {
+  transform: scale(1.1);
+  color: var(--header);
+  background: var(--highlight);
+}
+.container section.home .jobsCont .child main .rows .morecont .prev {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: mona, sans-serif;
+  font-size: 1.4em;
+  padding: 0.5em 1em;
+  font-weight: 500;
+  border-radius: 5px;
+  color: var(--text);
+  background: var(--bg);
+  cursor: pointer;
+  transition: 500ms ease-in-out;
+  margin-right: 0.5em;
+  box-shadow: var(--bxshadow);
+}
+.container section.home .jobsCont .child main .rows .morecont .next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: mona, sans-serif;
+  font-size: 1.4em;
+  padding: 0.5em 1em;
+  font-weight: 500;
+  border-radius: 5px;
+  color: var(--text);
+  background: var(--bg);
+  cursor: pointer;
+  transition: 500ms ease-in-out;
+  margin-left: 0.5em;
+  box-shadow: var(--bxshadow);
+}
+.container section.home .jobsCont .child main .rows .morecont .prev:hover,
+.container section.home .jobsCont .child main .rows .morecont .next:hover {
+  transform: scale(1.05);
+  color: var(--bg);
+  background: var(--highlight);
+}
+
+/* searchCont */
+.container section.home .jobsCont .child .searchCont {
+  width: 30%;
+  min-height: 500px;
+
+  border-radius: 10px;
+  margin-top: 8em;
+  padding: 3em 3em;
+  box-shadow: var(--bxshadow);
+}
+.container section.home .jobsCont .child .searchCont h1 {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 3em;
+  color: var(--text);
+}
+.container section.home .jobsCont .child .searchCont .rows {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  margin: 2em auto;
+  padding-bottom: 2em;
+  margin-top: 2em;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+}
+.container section.home .jobsCont .child .searchCont .rows:last-child {
+  box-shadow: none;
+}
+.container section.home .jobsCont .child .searchCont .rows .btn {
+  font-size: 1.2em;
+  padding: 0.8em 1.8em;
+  color: var(--text);
+  cursor: pointer;
+  box-shadow: var(--bxshadow);
+  border-radius: 20px;
+}
+.container section.home .jobsCont .child .searchCont .rows .select {
+  width: 100%;
+  cursor: pointer;
+}
+.container section.home .jobsCont .child .searchCont .rows .btn.active {
+  color: var(--bg);
+  background: var(--text);
+}
+
+.container section.home .jobsCont .child .searchCont button {
+  width: 80%;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 1.4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em auto;
+  color: var(--bg);
+  border: none;
+  outline: none;
+  background: var(--text);
+  cursor: pointer;
+  padding: 1em 1.8em;
+  box-shadow: var(--bxshadow);
+  border-radius: 20px;
+  transition: background 500ms ease-in-out;
+}
+.container section.home .jobsCont .child .searchCont button:hover {
+  color: var(--bg);
+  background: var(--text);
+}
+.container section.home .jobsCont .child .searchCont .cancelBtn {
+  display: none;
+}
+
+/* ************MEDIA QUERRY********************** */
+
+/* ********@MOBILE********* */
+
+@media (max-width: 767px) {
+  .container section.home header {
+    width: 100vw;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4em;
+    margin: 0em auto;
+    padding: 0em 2em;
+    color: var(--text);
+  }
+  .container section.home header h1 {
+    font-size: 2em;
+    box-shadow: rgba(38, 255, 34, 0.2) 0px 7px 29px 0px;
+  }
+  .container section.home header p {
+    font-size: 1.4em;
+    line-height: 20px;
+  }
+
+  .container section.home header a {
+    width: 150px;
+    height: 50px;
+    font-family: mona;
+    font-family: SemiBoldItalic;
+    font-weight: 600;
+    font-size: 1.6em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--header3);
+    background: var(--primary);
+    border-radius: 30px;
+  }
+
+  /* jobsCont */
+  .container section.home .jobsCont {
+    width: 100%;
+    height: auto;
+    padding: 0em 1em;
+  }
+
+  .container section.home .jobsCont ul {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+  }
+  .container section.home .jobsCont ul li {
+    font-size: 1em;
+  }
+  .container section.home .jobsCont .child {
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 6em;
+  }
+
+  .container section.home .jobsCont .child main {
+    width: 100%;
+    /* border: 2px solid; */
+  }
+  .container section.home .jobsCont ul li.filter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2em;
+    margin-left: auto;
+    font-size: 1.4em;
+    color: var(--text);
+    cursor: pointer;
+  }
+  .container section.home .jobsCont .child main form {
+    width: 100%;
+    height: 40px;
+    justify-content: space-between;
+    padding: 0em 1em;
+    margin-top: 2em;
+    border-radius: 30px;
+    box-shadow: var(--bxshadow);
+  }
+  .container section.home .jobsCont .child main form input {
+    font-size: 1.4em;
+    width: calc(100% - 30px);
+    height: 30px;
+  }
+  .container section.home .jobsCont .child main form .icon {
+    font-size: 1.4em;
+  }
+
+  .container section.home .jobsCont .child main h1 {
+    font-size: 1.5em;
+  }
+  .container section.home .jobsCont .child main h2 {
+    font-size: 1.2em;
+  }
+  .container section.home .jobsCont .child main .rows {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4em;
+  }
+  .container section.home .jobsCont .child main .rows .box {
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em 1em;
+  }
+
+  .container section.home .jobsCont .child main .rows .box .dpcont {
+    width: 100%;
+    display: flex;
+    gap: 2em;
+    justify-content: flex-start;
+  }
+
+  .container section.home .jobsCont .child main .rows .box .dpcont .dp {
+    display: block;
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    color: var(--text);
+  }
+  .container section.home .jobsCont .child main .rows .box .dpcont h3 {
+    font-size: 1.2em;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+
+  .container section.home .jobsCont .child main .rows .box .dpcont h4 {
+    font-size: 1.4em;
+    font-weight: 400;
+    margin-top: 0.5em;
+  }
+  .container section.home .jobsCont .child main .rows .box .dpcont h4 span {
+    display: inline-block;
+    margin-left: 2em;
+    margin-top: 0.5em;
+  }
+
+  .container section.home .jobsCont .child main .rows .box .dpcont ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    margin-top: 1em;
+  }
+  .container section.home .jobsCont .child main .rows .box .dpcont ul li {
+    font-size: 1em;
+    font-weight: 500;
+    padding: 0.7em 1.5em;
+    border-radius: 20px;
+    cursor: pointer;
+    color: var(--text);
+    background: var(--bg);
+  }
+
+  .container section.home .jobsCont .child main .rows .box .cont {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    opacity: 1;
+  }
+  .container section.home .jobsCont .child main .rows .box .cont .prime {
+    font-size: 0.8em;
+  }
+  .container section.home .jobsCont .child main .rows .box .cont .loc {
+    font-size: 1em;
+  }
+  .container section.home .jobsCont .child main .rows .box .view .btn {
+    font-size: 1.2em;
+  }
+
+  .container section.home .jobsCont .child main .rows .box:hover .cont {
+    opacity: 1;
+  }
+
+  .container section.home .jobsCont .child main .rows .morecont {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+  .container section.home .jobsCont .child main .rows .morecont .btn {
+    width: 15px;
+    height: 15px;
+    font-size: 1em;
+  }
+  .container section.home .jobsCont .child main .rows .morecont .prev {
+    font-size: 1em;
+  }
+  .container section.home .jobsCont .child main .rows .morecont .next {
+    font-size: 1em;
+  }
+
+  /* searchCont */
+  .container section.home .jobsCont .child .searchCont {
+    width: 100%;
+    height: 100vh;
+    margin-top: 8em;
+    padding: 3em 1em;
+    background: var(--bg);
+    box-shadow: var(--bxshadow);
+    position: fixed;
+    top: -9%;
+    left: 0%;
+    z-index: 5;
+    overflow: scroll;
+    transition: transform 500ms ease-in-out;
+    transform: translateX(-100%);
+    z-index: 99999999999;
+  }
+  .container section.home .jobsCont .child .searchCont .cancelBtn {
+    display: block;
+    font-size: 3em;
+    position: fixed;
+    color: var(--text);
+    top: 5%;
+    right: 1%;
+  }
+  .container section.home .jobsCont .child .searchCont.active {
+    transform: translateX(0%);
+  }
+  .container section.home .jobsCont .child .searchCont h1 {
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 3em;
+    color: var(--text);
+    position: sticky;
+  }
+  .container section.home .jobsCont .child .searchCont .rows {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    margin: 2em auto;
+    padding-bottom: 2em;
+    margin-top: 2em;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+    padding-bottom: 5em;
+  }
+  .container section.home .jobsCont .child .searchCont .rows:last-child {
+    box-shadow: none;
+  }
+}

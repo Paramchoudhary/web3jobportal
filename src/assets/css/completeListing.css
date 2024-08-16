@@ -1,0 +1,119 @@
+.container .completeListing {
+  width: 100%;
+  height: calc(100vh - 20em);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* border: 2px solid var(--text); */
+}
+.container .completeListing .loader {
+  width: 48px;
+  height: 48px;
+  position: relative;
+}
+.container .completeListing .loader::before,
+.container .completeListing .loader::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 48em;
+  height: 48em;
+  background-image: radial-gradient(
+      circle 10px,
+      var(--highlight) 100%,
+      transparent 0
+    ),
+    radial-gradient(circle 10px, var(--highlight) 100%, transparent 0),
+    radial-gradient(circle 10px, var(--highlight) 100%, transparent 0),
+    radial-gradient(circle 10px, var(--highlight) 100%, transparent 0),
+    radial-gradient(circle 10px, var(--highlight) 100%, transparent 0),
+    radial-gradient(circle 10px, var(--highlight) 100%, transparent 0),
+    radial-gradient(circle 10px, var(--highlight) 100%, transparent 0),
+    radial-gradient(circle 10px, var(--highlight) 100%, transparent 0);
+  background-position: 0em -18em, 0em 18em, 18em 0em, -18em 0em, 13em -13em,
+    -13em -13em, 13em 13em, -13em 13em;
+  background-repeat: no-repeat;
+  font-size: 0.5px;
+  border-radius: 50%;
+  animation: blast 1s ease-in infinite;
+}
+.container .completeListing .loader::after {
+  font-size: 1px;
+  background: var(--highlight);
+  animation: bounce 1s ease-in infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    font-size: 0.75px;
+  }
+  50% {
+    font-size: 1.5px;
+  }
+}
+@keyframes blast {
+  0%,
+  40% {
+    font-size: 0.5px;
+  }
+  70% {
+    opacity: 1;
+    font-size: 4px;
+  }
+  100% {
+    font-size: 6px;
+    opacity: 0;
+  }
+}
+
+.container .completeListing ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  margin-top: 8em;
+  color: var(--text);
+  font-family: "Chakra Petch", sans-serif;
+}
+.container .completeListing ul h1 {
+  font-size: 4em;
+  font-weight: 400;
+  /* color: var(--highlight); */
+}
+.container .completeListing ul li {
+  font-size: 1.4em;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  opacity: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid var(--highlight); /* Cursor effect */
+}
+.container .completeListing ul li.active {
+  animation: typing 1s steps(40, end) forwards;
+}
+.container .completeListing ul li.active.failed{
+color: crimson;
+font-size: 2.5em;
+}
+
+.container .completeListing ul li .icon {
+  color: var(--highlight);
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+    opacity: 1;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+    border-color: transparent;
+  }
+}

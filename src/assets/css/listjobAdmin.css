@@ -1,0 +1,710 @@
+.container section.admindashboard .listjob {
+    width: 100%;
+    min-height: 100vh;
+  }
+  .container section.admindashboard .listjob form {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-top: 6em;
+    gap: 6em;
+  }
+  
+  .container section.admindashboard .listjob form .dpInt {
+    display: none;
+  }
+  
+  .container section.admindashboard .listjob form .txtcont {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    height: auto;
+    border-radius: 10px;
+  }
+  .container section.admindashboard .listjob form .txtcont .rows {
+    width: 100%;
+  }
+  .container section.admindashboard .listjob form .txtcont .rows label {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    font-weight: 800;
+    font-size: 1.4em;
+    gap: 0.4em;
+    font-family: "Chakra Petch", sans-serif;
+    color: var(--text);
+  }
+  .container section.admindashboard .listjob form .txtcont .rows p {
+    color: var(--text);
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 600;
+    font-size: 1.4em;
+    margin: 0.6em;
+  }
+  .container section.admindashboard .listjob form .txtcont .rows label .icon {
+    font-size: 1.4em;
+    color: var(--highlight);
+  }
+  
+  .container section.admindashboard .listjob form .txtcont .rows input {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 2em;
+    padding: 0.6em 1.5em;
+    color: var(--text);
+    border: none;
+    outline: none;
+    background: var(--bg);
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: var(--bxshadow);
+    margin: 0.5em 0em;
+  }
+  .container section.admindashboard .listjob form .txtcont .rows .box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4em;
+  }
+  .container section.admindashboard .listjob form .txtcont .rows .box input {
+    width: 50%;
+  }
+  
+  .container section.admindashboard .listjob form .txtcont .rows textarea {
+    display: flex;
+    width: 100%;
+    height: 200px;
+    align-items: center;
+    gap: 0.5em;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 2em;
+    padding: 0.6em 1.5em;
+    color: var(--text);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: var(--bxshadow);
+    margin: 0.5em 0em;
+  }
+  
+  .container section.admindashboard .listjob form .txtcont .rows button {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 2em;
+    padding: 0.6em 1.5em;
+    color: var(--text);
+    background: var(--highlight);
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    margin: 2em auto;
+  }
+  
+  .rdw-editor-wrapper {
+    padding: 1rem;
+  }
+  .wrapper-class {
+    padding: 1rem;
+    border: 1px solid var(--text);
+  }
+  .editor-class {
+    font-family: "Chakra Petch", sans-serif;
+    color: var(--text);
+    height: 400px !important;
+    padding: 1rem;
+  }
+  .container section.admindashboard .listjob form .txtcont .pricetags {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: "Chakra Petch", sans-serif;
+    /* gap: 4em; */
+    min-height: 400px;
+    border-radius: 10px;
+    padding: 1em 2em;
+    box-shadow: var(--bxshadow);
+  }
+  
+  .container section.admindashboard .listjob form .txtcont .pricetags h2 {
+    color: var(--highlight);
+    font-weight: 600;
+    font-size: 1.4em;
+    margin: 0.6em;
+  }
+  .container section.admindashboard .listjob form .txtcont .pricetags .tags {
+    margin: 1em 0em;
+  }
+  .container section.admindashboard .listjob form .txtcont .pricetags .tags .tag {
+    color: var(--text);
+    font-weight: 600;
+    font-size: 1.4em;
+    margin: 1em 0em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: left;
+    gap: 1em;
+    cursor: pointer;
+  }
+  .container
+    section.admindashboard
+    .listjob
+    form
+    .txtcont
+    .pricetags
+    .tags
+    .tag
+    input {
+    color: var(--text);
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 600;
+    font-size: 1.4em;
+    border: none;
+    outline: none;
+  }
+  .container
+    section.admindashboard
+    .listjob
+    form
+    .txtcont
+    .pricetags
+    .tags
+    .tag
+    input.int {
+    display: none;
+  }
+  
+  .container
+    section.admindashboard
+    .listjob
+    form
+    .txtcont
+    .pricetags
+    .tags
+    .tag
+    .lab {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    cursor: pointer;
+  }
+  
+  .container
+    section.admindashboard
+    .listjob
+    form
+    .txtcont
+    .pricetags
+    .tags
+    .tag
+    .views {
+    font-size: 0.8em;
+    padding: 0.4em 1em;
+    box-shadow: var(--bxshadow);
+  }
+  .container
+    section.admindashboard
+    .listjob
+    form
+    .txtcont
+    .pricetags
+    .tags
+    .tag
+    label.dp {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .container
+    section.admindashboard
+    .listjob
+    form
+    .txtcont
+    .pricetags
+    .tags
+    .tag
+    label.dp
+    img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  .container section.admindashboard .listjob form .priceSec h2 {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 600;
+    font-size: 1.4em;
+    margin: 0.5em;
+    text-align: center;
+    color: var(--highlight);
+  }
+  .container section.admindashboard .listjob form .priceSec h3 {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 600;
+    font-size: 2em;
+    text-align: center;
+    color: var(--text);
+  }
+  .container section.admindashboard .listjob form .priceSec h3 span {
+    color: var(--highlight);
+    font-weight: 500;
+  }
+  .container section.admindashboard .listjob form .priceSec img {
+    object-fit: contain;
+    width: 100px;
+    margin: 1em auto;
+  }
+  
+  .container section.admindashboard .listjob form .priceSec button {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    font-size: 2em;
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 600;
+    color: var(--bg);
+    margin: 1em auto;
+    background: var(--text);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+  }
+  .container section.admindashboard .listjob form .priceSec button :before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+  }
+  .container section.admindashboard .listjob form .priceSec button :active {
+    color: var(--header);
+  }
+  .container section.admindashboard .listjob form .priceSec button :active:after {
+    background: transparent;
+  }
+  .container section.admindashboard .listjob form .priceSec button :hover:before {
+    opacity: 1;
+  }
+  .container section.admindashboard .listjob form .priceSec button :after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--text);
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+  
+  .container section.admindashboard .listjob .tiptap.ProseMirror {
+    font-family: "Chakra Petch", sans-serif;
+    height: 500px !important;
+    outline: none;
+    color: var(--text);
+    box-shadow: var(--bxshadow);
+    padding: 1em 1em;
+    margin-top: 2em;
+    overflow-y: scroll;
+  }
+  .container section.admindashboard .listjob .button-group {
+    margin-top: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4em;
+  }
+  .container section.admindashboard .listjob .button-group .btn {
+    display: inline-block;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 1.4em;
+    font-weight: 500;
+    padding: 0.7em 1.5em;
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--text);
+    background: var(--bg);
+    box-shadow: var(--bxshadow);
+  }
+  /* .container section.admindashboard .listjob .button-group .btn .icon{
+  font-size: em;
+  } */
+  .container section.admindashboard .listjob .button-group .btn.is-active {
+    color: var(--bg);
+    background: var(--text);
+  }
+  
+  @keyframes glowing {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+  /* PREVIEW */
+  .container section.admindashboard .listjob main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 4em;
+    padding: 2em 6em;
+    padding-top: 15em;
+    position: relative;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    z-index: 999999999;
+    background: var(--bg);
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;
+  }
+  .container section.admindashboard .listjob main::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .container section.admindashboard .listjob main .btnBack {
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 1.4em;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1em auto;
+    gap: 0.2em;
+    color: var(--bg);
+    border: none;
+    outline: none;
+    background: var(--text);
+    cursor: pointer;
+    padding: 1em 0em;
+    box-shadow: var(--bxshadow);
+    border-radius: 20px;
+    position: absolute;
+    top: 5em;
+    left: 2%;
+  }
+  
+  .container section.admindashboard .listjob main .child {
+    width: 70%;
+    height: auto;
+    padding-bottom: 2em;
+  }
+  
+  .container section.admindashboard .listjob main .child h2 {
+    font-size: 4em;
+    font-family: "Chakra Petch", sans-serif;
+    color: var(--highlight);
+  }
+  .container section.admindashboard .listjob main .child h1 {
+    font-size: 3em;
+    font-family: "Chakra Petch", sans-serif;
+    color: var(--text);
+    margin: 0.5em auto;
+  }
+  .container section.admindashboard .listjob main .child h3 {
+    font-size: 2em;
+    font-family: "Chakra Petch", sans-serif;
+    color: var(--text);
+  }
+  .container section.admindashboard .listjob main .child p {
+    font-family: mona, sans-serif;
+    font-size: 14px;
+    line-height: 25px;
+    color: var(--text);
+    margin: 1em auto;
+  }
+  .container section.admindashboard .listjob main .child li p {
+    font-size: 14px;
+  }
+  .container section.admindashboard .listjob main .child a {
+    color: var(--highlight);
+    font-weight: 800;
+  }
+  .container section.admindashboard .listjob main .child li {
+    font-family: mona, sans-serif;
+    font-size: 14px;
+    line-height: 25px;
+    color: var(--text);
+    margin: 1em auto;
+  }
+  
+  .container section.admindashboard .listjob main .child .applyBtn {
+    width: 40%;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 1.4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+    color: var(--bg);
+    border: none;
+    outline: none;
+    background: var(--text);
+    cursor: pointer;
+    padding: 1em 1.8em;
+    box-shadow: var(--bxshadow);
+    border-radius: 20px;
+    transition: background 500ms ease-in-out;
+  }
+  .container section.admindashboard .listjob main .sib {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: auto;
+    padding: 2em 1em;
+  }
+  
+  .container section.admindashboard .listjob main .sib .sibcont {
+    width: 100%;
+    min-height: 400px;
+    font-family: "Chakra Petch", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em 2em;
+    border-radius: 5px;
+    box-shadow: var(--bxshadow);
+  }
+  .container section.admindashboard .listjob main .sib .sibcont img {
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  .container section.admindashboard .listjob main .sib .sibcont h1 {
+    color: var(--text);
+    font-size: 2em;
+    margin: 0.5em;
+  }
+  
+  .container section.admindashboard .listjob main .sib .sibcont .shareconts {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1.5em;
+    margin: 2em auto;
+  }
+  .container section.admindashboard .listjob main .sib .sibcont .shareconts .btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 1.6em;
+    padding: 0.6em 1.5em;
+    color: var(--bg);
+    background: var(--text);
+    cursor: pointer;
+    border-radius: 20px;
+  }
+  
+  .container section.admindashboard .listjob main .sib .sibcont ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2em;
+  }
+  .container section.admindashboard .listjob main .sib .sibcont ul li {
+    color: var(--text);
+    width: 100%;
+    font-size: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0.5em auto;
+    list-style: none;
+  }
+  .container
+    section.admindashboard
+    .listjob
+    main
+    .sib
+    .sibcont
+    ul
+    li
+    span:first-child {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    text-align: left;
+    margin: 0.2em 0em;
+  }
+  .container
+    section.admindashboard
+    .listjob
+    main
+    .sib
+    .sibcont
+    ul
+    li
+    span:last-child {
+    font-weight: 400;
+  }
+  /* .container section.admindashboard .listjob  main .sib .sibcont ul li.pr span{
+    font-family: "Chakra Petch", sans-serif;
+  } */
+  .container
+    section.admindashboard
+    .listjob
+    main
+    .sib
+    .sibcont
+    ul
+    li.pr
+    span:last-child {
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  
+  .container section.admindashboard .listjob main .sib .sibcont .applyBtn {
+    width: 80%;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 1.4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1em auto;
+    color: var(--bg);
+    border: none;
+    outline: none;
+    background: var(--text);
+    cursor: pointer;
+    padding: 1em 1.8em;
+    box-shadow: var(--bxshadow);
+    border-radius: 20px;
+    transition: background 500ms ease-in-out;
+  }
+  
+  .container section.admindashboard .listjob main .sib ul li a {
+    color: var(--text);
+  }
+  
+  
+  
+  
+  
+  /* ************MEDIA QUERRY********************** */
+  
+  /* ********@MOBILE********* */
+  
+  @media (max-width: 767px) {
+    .container section.admindashboard .listjob {
+      width: 100%;
+      min-height: 100vh;
+    }
+    .container section.admindashboard .listjob form {
+      /*  */
+      flex-direction: column;
+    }
+  
+    .container section.admindashboard .listjob form .dpInt {
+      display: none;
+    }
+  
+    .container section.admindashboard .listjob form .txtcont {
+      width: 100%;
+    }
+    .container section.admindashboard .listjob form .priceSec {
+      width: 100%;
+    }
+  
+    .container section.admindashboard .listjob form .txtcont .rows .box input {
+      font-size: 1.4em;
+    }
+    .container section.admindashboard .listjob form .txtcont .rows button {
+      width: 70%;
+    }
+    .container section.admindashboard .listjob form .txtcont .rows p {
+      font-size: 1.2em;
+    }
+  
+  
+  /* PREVIEW */
+  .container section.admindashboard .listjob main {
+    flex-direction: column;
+    padding: 2em 1.5em;
+    padding-top: 12em;
+  }
+  .container section.admindashboard .listjob main::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .container section.admindashboard .listjob main .btnBack {
+    font-size: 1em;
+    width: 100px;
+    left: 3%;
+  }
+  
+  .container section.admindashboard .listjob main .child {
+    width: 100%;
+    padding-bottom: 2em;
+  }
+  
+  .container section.admindashboard .listjob main .child h2 {
+    font-size: 3em;
+  }
+  .container section.admindashboard .listjob main .child h1 {
+    font-size: 2em;
+  }
+  .container section.admindashboard .listjob main .child h3 {
+    font-size: 1.6em;
+  }
+  
+  .container section.admindashboard .listjob main .child .applyBtn {
+    width: 80%;
+  }
+  .container section.admindashboard .listjob main .sib {
+    width: 100%;
+  }
+  
+  .container section.admindashboard .listjob main .sib .sibcont {
+    width: 100%;
+  }
+  
+  }
+  
