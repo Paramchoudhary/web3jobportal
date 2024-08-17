@@ -1,6 +1,7 @@
 .container section.admindashboard .adminJobs {
   width: 70%;
   margin: 1em auto;
+  font-family: "Chakra Petch", sans-serif;
   /* border: 2px solid; */
 }
 .container section.admindashboard .adminJobs form {
