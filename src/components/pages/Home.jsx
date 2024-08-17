@@ -379,7 +379,7 @@ function Home() {
                           />
                         </div>
                         <h4>
-                          {job.stack[0]}
+                          {job.position}
                           <span>
                             💰 ${formatNumber(job.minsalary)} - $
                             {formatNumber(job.maxsalary)}
