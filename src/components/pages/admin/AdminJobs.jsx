@@ -175,12 +175,16 @@ function AdminJobs() {
                     />
                   </div>
                   <h4>
-                    Community manager
-                    <span>💰 $50k - $70k</span>
-                  </h4>
+                          {job.position}
+                          <span>
+                            💰 ${formatNumber(job.minsalary)} - $
+                            {formatNumber(job.maxsalary)}
+                          </span>
+                        </h4>
                   <ul>
-                    <li>Photoshop</li>
-                    <li>Adobe Illustrator</li>
+                  {job.stack.map((list) => (
+                            <li>{list}</li>
+                          ))}
                   </ul>
                 </div>
               </div>
