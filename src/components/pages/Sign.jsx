@@ -2,12 +2,12 @@ import React, { useEffect, useRef, useState } from "react";
 import "../../assets/css/sign.css";
 import { FcGoogle } from "react-icons/fc";
 import bg from "../../assets/images/dp.jpg";
-import { GoogleLogin } from "@react-oauth/google";
 import { useDispatch, useSelector } from "react-redux";
 import { clear, goggleSign, login, register } from "../../redux/degenwork";
 import { useNavigate } from "react-router-dom";
+import CustomGoogleButton from "../ui/CustomGoogleButton";
 
-function Sign() {
+function Sign({ setSignupPopUp, setIsAuthenticated }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [countryOption, setCountryOption] = useState([]);
@@ -41,11 +41,11 @@ function Sign() {
 
   //
   useEffect(() => {
-    // console.log(error);
     let timer;
     if (success) {
-       timer = setTimeout(() => {
+      timer = setTimeout(() => {
         dispatch(clear());
+        setIsAuthenticated(true); // Add this line
         if (localStorage.token && localStorage.role === "user") {
           navigate("/user/");
         } else if (localStorage.role === "admin") {
@@ -97,11 +97,11 @@ function Sign() {
               <FcGoogle />
               Continue with Google
             </div> */}
-            <GoogleLogin
+            <CustomGoogleButton
               onSuccess={handleSuccess}
               onError={handleError}
-              useOneTap
             />
+
             <button>Sign Up</button>
             <p>
               Already have an account?{" "}
@@ -149,11 +149,11 @@ function Sign() {
               />
             </div>
             <h4>OR</h4>
-            <GoogleLogin
+            <CustomGoogleButton
               onSuccess={handleSuccess}
               onError={handleError}
-              useOneTap
             />
+
             <button>Sign in</button>
             <p>
               Don’t have an account??{" "}

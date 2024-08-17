@@ -38,6 +38,17 @@ html {
   --bxshadow2: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 body {
   background: var(--bg);
 }
@@ -204,6 +215,69 @@ body.active {
   display: none;
 }
 
+/* navbar */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.theme-toggle .icon {
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.login-button {
+  background-color: var(--text);
+  color: var(--bg);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: var(--text);
+}
+
+/* Custom Google Button Styles */
+.signin {
+  float: right;
+  max-width: 320px;
+  display: flex;
+  padding: 0.5rem 1.4rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  vertical-align: middle;
+  align-items: center;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  gap: 0.75rem;
+  color: #c4d2dc;
+  background-color: #19242b;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0, 0.87, 0.12, 1);
+}
+
+.signin:hover {
+  transform: scale(1.025);
+}
+
+.signin:active {
+  transform: scale(0.975);
+}
+
+.signin svg {
+  height: 24px;
+  width: auto;
+}
+
 /* ************MEDIA QUERRY********************** */
 
 /* ********@MOBILE********* */
@@ -243,7 +317,7 @@ body.active {
   .container nav .menuBtn span:last-child {
     width: 12px;
   }
-  .container nav ul li.desk{
+  .container nav ul li.desk {
     position: absolute;
     left: 0%;
     top: 80%;

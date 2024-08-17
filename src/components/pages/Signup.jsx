@@ -2,12 +2,12 @@ import React, { useEffect, useRef, useState } from "react";
 import "../../assets/css/signup.css";
 import { FcGoogle } from "react-icons/fc";
 import bg from "../../assets/images/dp.jpg";
-import { GoogleLogin } from "@react-oauth/google";
 import { useDispatch, useSelector } from "react-redux";
 import { clear, goggleSign, login, register } from "../../redux/degenwork";
 import { useNavigate } from "react-router-dom";
+import CustomGoogleButton from "../ui/CustomGoogleButton";
 
-function Signup({ signupPopUp, setSignupPopUp }) {
+function Signup({ signupPopUp, setSignupPopUp, setIsAuthenticated }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [countryOption, setCountryOption] = useState([]);
@@ -38,27 +38,26 @@ function Signup({ signupPopUp, setSignupPopUp }) {
   const registerUser = (e) => {
     e.preventDefault();
     dispatch(register(e.target));
-    // console.log(e.target);
   };
+
   const loginUser = (e) => {
     e.preventDefault();
     dispatch(login(e.target));
   };
 
-  //
   useEffect(() => {
-    let timer ;
+    let timer;
     if (success) {
-       timer = setTimeout(() => {
+      timer = setTimeout(() => {
         dispatch(clear());
         setSignupPopUp(false);
+        setIsAuthenticated(true);
         if (localStorage.token && localStorage.role === "user") {
           navigate("/user/");
         } else if (localStorage.role === "admin") {
           navigate("/admin/");
         }
       }, 3000);
-      // Cleanup the timeout if the component unmounts or `success` changes
       return () => clearTimeout(timer);
     }
   }, [success, error]);
@@ -95,11 +94,11 @@ function Signup({ signupPopUp, setSignupPopUp }) {
               <FcGoogle />
               Continue with Google
             </div> */}
-            <GoogleLogin
+            <CustomGoogleButton
               onSuccess={handleSuccess}
               onError={handleError}
-              useOneTap
             />
+
             <button>Sign Up</button>
             <p>
               Already have an account?{" "}
@@ -147,14 +146,14 @@ function Signup({ signupPopUp, setSignupPopUp }) {
               />
             </div>
             <h4>OR</h4>
-            <GoogleLogin
+            <CustomGoogleButton
               onSuccess={handleSuccess}
               onError={handleError}
-              useOneTap
             />
+
             <button>Sign in</button>
             <p>
-              Don’t have an account??{" "}
+              Don't have an account?{" "}
               <a
                 href="#"
                 onClick={(e) => {

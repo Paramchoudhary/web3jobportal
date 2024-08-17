@@ -17,10 +17,12 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchRoles, fetchSkills, getJobs } from "../../redux/degenwork";
 import { formatNumber, timeAgo } from "../../utils/utils";
+import FAQSection from "../ui/FaqSection";
+import { Helmet } from "react-helmet";
 
 function Home() {
   const dispatch = useDispatch();
-  const { jobs, error, success, jobsCount , skills, roles} = useSelector(
+  const { jobs, error, success, jobsCount, skills, roles } = useSelector(
     (state) => state.degenwork
   );
   const [countryOption, setCountryOption] = useState([]);
@@ -114,6 +116,8 @@ function Home() {
   const [activeBtn, setActiveBtn] = useState(1);
   const filterRef = useRef(null);
 
+  const [isLoading, setIsLoading] = useState(true);
+
   const style = {
     control: (base, state) => ({
       ...base,
@@ -205,11 +209,15 @@ function Home() {
   //
   useEffect(() => {
     if (!jobs) {
-      dispatch(getJobs({ from: activeBtn - 1 }));
+      setIsLoading(true);
+      dispatch(getJobs({ from: activeBtn - 1 })).then(() =>
+        setIsLoading(false)
+      );
     }
     dispatch(fetchSkills());
     dispatch(fetchRoles());
   }, [jobs]);
+
   // Get jobs
   useEffect(() => {
     if (jobsCount) {
@@ -318,200 +326,288 @@ function Home() {
   //
   useEffect(() => {
     const val = filterJob();
-    dispatch(getJobs({...val }));
+    dispatch(getJobs({ ...val }));
   }, [activeBtn]);
 
-  return (
-    <section className="home">
-      <header>
-        <h1>
-          The #1 <span>Job Board for</span> <br />
-          finding your next web3 job
-        </h1>
-        <p>
-        Web3jobportal is where web3 meets work and the best place
-          to discover and connect with degens and jobs worldwide.
-        </p>
-        <Link to="/user/list/">+ Post a job</Link>
-      </header>
-      <div className="jobsCont">
-        <ul className="job_nav">
-          <li className="active">Job Board</li>
-          <li>
-            <Link to="/degens">Degen Search</Link>
-          </li>
-          <li className="filter" onClick={openFilterRef}>
-            <GoFilter /> Filters
-          </li>
-        </ul>
-        <div className="child">
-          <main>
-            <form action="" onSubmit={searchName}>
-              <label htmlFor="text">
-                <IoIosSearch className="icon" />
-              </label>
-              <input
-                type="text"
-                name="text"
-                placeholder="Search by company name"
-              />
-            </form>
-            <h1>Recent posts</h1>
-            <div className="rows">
-              {jobs &&
-                jobs.map((job) => (
-                  <div
-                    className={job.color === "1" ? "box highlight" : "box"}
-                    key={job._id}
-                    style={
-                      job.color === "2" ? { backgroundColor: job.colorInt } : {}
-                    }
-                  >
-                    <div className="dpcont">
-                      <img src={job.dp ? job.dp : dp} alt="" className="dp" />
-                      <div className="dptxt">
-                        <div className="subtext">
-                          <h3>{job.companyName}</h3>
-                          <img
-                            src={job.dp ? job.dp : dp}
-                            alt=""
-                            className="company_logo"
-                          />
-                        </div>
-                        <h4>
-                          {job.position}
-                          <span>
-                            💰 ${formatNumber(job.minsalary)} - $
-                            {formatNumber(job.maxsalary)}
-                          </span>
-                        </h4>
-                        <ul>
-                          {job.stack.map((list) => (
-                            <li>{list}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                    <div className="cont">
-                      <div className="prime">
-                        Posted {timeAgo(job.createdAt)}
-                      </div>
-                      <div className="loc">
-                        <FaLocationDot />
-                        {job.type.map((list) => (
-                          <>{list}</>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="view">
-                      <Link to={`jobs/${job._id}`} className="btn">
-                        View Job
-                      </Link>
-                      <Link to={`jobs/${job._id}`} className="btn">
-                        Apply now
-                      </Link>
-                    </div>
-                  </div>
-                ))}
-              <div className="morecont">
-                <div className="prev" onClick={prevBtn}>
-                  <IoMdArrowDropleft />
-                  Previous
-                </div>
-                {btns &&
-                  btns.map((no) => (
-                    <div
-                      className={no === activeBtn ? "btn active" : "btn"}
-                      onClick={() => {
-                        addActiveBtn(no);
-                      }}
-                      key={no}
-                    >
-                      {no}
-                    </div>
-                  ))}
-                <div className="next" onClick={nextBtn}>
-                  Next
-                  <IoMdArrowDropright />
-                </div>
+  // Skeleton Loader
+
+  const SkeletonLoader = () => (
+    <div className="skeleton-loader job">
+      {[...Array(6)].map((i) => (
+        <div key={i} className="skeleton-job box">
+          <div className="skeleton-dpcont">
+            <div className="skeleton-dp"></div>
+            <div className="skeleton-dptxt">
+              <div className="skeleton-subtext">
+                <div className="skeleton-companyName"></div>
+                <div className="skeleton-logo"></div>
+              </div>
+              <div className="skeleton-position"></div>
+              <div className="skeleton-stack">
+                <div className="skeleton-stack-item"></div>
+                <div className="skeleton-stack-item"></div>
+                <div className="skeleton-stack-item"></div>
               </div>
             </div>
-          </main>
-          <div className="searchCont" ref={filterRef}>
-            <h1>Filters</h1>
-            <MdCancel className="cancelBtn" onClick={openFilterRef} />
-            <div className="rows">
-              {skills &&
-                skills.map((list) => (
-                  <div
-                    className={
-                      selectedFilter
-                        ? selectedFilter.includes(list._id)
-                          ? "btn active"
-                          : "btn"
-                        : "btn"
-                    }
-                    key={list._id}
-                    onClick={() => {
-                      setfilter(list._id);
-                    }}
-                  >
-                    {list.name}
-                  </div>
-                ))}
-            </div>
-            <div className="rows">
-              <Select
-                options={countryOption}
-                name="country"
-                defaultValue={{ label: "United States", value: "usa" }}
-                placeholder={"- SELECT COUNTRY -"}
-                styles={style}
-                onChange={(e) => {
-                  setDesiredLocation(e.value);
-                }}
-                className="select"
-              />
-              <div
-                className={officeLoc.includes("remote") ? "btn active" : "btn"}
-                onClick={addlocOffice}
-                data-index="remote"
-              >
-                Open to remote
-              </div>
-              <div
-                className={officeLoc.includes("site") ? "btn active" : "btn"}
-                onClick={addlocOffice}
-                data-index="site"
-              >
-                On site
-              </div>
-            </div>
-            <div className="rows">
-              {roles &&
-                roles.map((list) => (
-                  <div
-                    className={
-                      selectedJobtype
-                        ? selectedJobtype.includes(list._id)
-                          ? "btn active"
-                          : "btn"
-                        : "btn"
-                    }
-                    key={list._id}
-                    onClick={() => {
-                      setJobTypeSelected(list._id);
-                    }}
-                  >
-                    {list.name}
-                  </div>
-                ))}
-            </div>
-            <button onClick={applyFilter}>Apply Filter</button>
+          </div>
+          <div className="skeleton-cont">
+            <div className="skeleton-prime"></div>
+            <div className="skeleton-loc"></div>
+          </div>
+          <div className="skeleton-view">
+            <div className="skeleton-btn"></div>
+            <div className="skeleton-btn"></div>
           </div>
         </div>
-      </div>
-    </section>
+      ))}
+    </div>
+  );
+
+  return (
+    <>
+      <Helmet>
+        <title>
+          Web3jobportal - #1 Job Board for Finding Your Next Web3 Job
+        </title>
+        <meta
+          name="description"
+          content="Web3jobportal is the top platform to discover and connect with Web3 job opportunities worldwide. Find your next Web3 job today!"
+        />
+        <meta
+          name="keywords"
+          content="Web3 jobs, blockchain jobs, crypto jobs, decentralized jobs, find Web3 jobs, connect with degens, job board, Web3 careers"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta
+          property="og:title"
+          content="Web3jobportal - #1 Job Board for Finding Your Next Web3 Job"
+        />
+        <meta
+          property="og:description"
+          content="Web3jobportal is where Web3 meets work. Discover and connect with Web3 job opportunities worldwide."
+        />
+        <meta property="og:image" content="/metaImage.png" />
+        <meta property="og:url" content="https://www.web3jobportal.com" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Web3jobportal - #1 Job Board for Finding Your Next Web3 Job"
+        />
+        <meta
+          name="twitter:description"
+          content="Web3jobportal is where Web3 meets work. Discover and connect with Web3 job opportunities worldwide."
+        />
+        <meta name="twitter:image" content="/metaImage.png" />
+      </Helmet>
+      <section className="home">
+        <header>
+          <h1>
+            The #1 <span>Job Board for</span> <br />
+            finding your next web3 job
+          </h1>
+          <p>
+            Web3jobportal is where web3 meets work and the best place to
+            discover and connect with degens and jobs worldwide.
+          </p>
+          <Link to="/user/list/">+ Post a job</Link>
+        </header>
+        <div className="jobsCont">
+          <ul className="job_nav">
+            <li className="active">Job Board</li>
+            <li>
+              <Link to="/degens">Degen Search</Link>
+            </li>
+            <li className="filter" onClick={openFilterRef}>
+              <GoFilter /> Filters
+            </li>
+          </ul>
+          <div className="child">
+            <main>
+              <form action="" onSubmit={searchName}>
+                <label htmlFor="text">
+                  <IoIosSearch className="icon" />
+                </label>
+                <input
+                  type="text"
+                  name="text"
+                  placeholder="Search by company name"
+                />
+              </form>
+              <h1>Recent posts</h1>
+              <div className="rows">
+                {isLoading ? (
+                  <SkeletonLoader />
+                ) : jobs && jobs.length > 0 ? (
+                  jobs.map((job) => (
+                    <div
+                      className={job.color === "1" ? "box highlight" : "box"}
+                      key={job._id}
+                      style={
+                        job.color === "2"
+                          ? { backgroundColor: job.colorInt }
+                          : {}
+                      }
+                    >
+                      <div className="dpcont">
+                        <img src={job.dp ? job.dp : dp} alt="" className="dp" />
+                        <div className="dptxt">
+                          <div className="subtext">
+                            <h3>{job.companyName}</h3>
+                            <img
+                              src={job.dp ? job.dp : dp}
+                              alt=""
+                              className="company_logo"
+                            />
+                          </div>
+                          <h4>
+                            {job.position}
+                            <span>
+                              💰 ${formatNumber(job.minsalary)} - $
+                              {formatNumber(job.maxsalary)}
+                            </span>
+                          </h4>
+                          <ul>
+                            {job.stack.map((list) => (
+                              <li>{list}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                      <div className="cont">
+                        <div className="prime">
+                          Posted {timeAgo(job.createdAt)}
+                        </div>
+                        <div className="loc">
+                          <FaLocationDot />
+                          {job.type.map((list) => (
+                            <>{list}</>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="view">
+                        <Link to={`jobs/${job._id}`} className="btn">
+                          View Job
+                        </Link>
+                        <Link to={`jobs/${job._id}`} className="btn">
+                          Apply now
+                        </Link>
+                      </div>
+                    </div>
+                  ))
+                ) : (
+                  <div className="no-jobs-found">
+                    <h2>No jobs found</h2>
+                    <p>Try adjusting your search criteria or filters.</p>
+                  </div>
+                )}
+                {jobs && jobs.length > 0 && (
+                  <div className="morecont">
+                    <div className="prev" onClick={prevBtn}>
+                      <IoMdArrowDropleft />
+                      Previous
+                    </div>
+                    {btns &&
+                      btns.map((no) => (
+                        <div
+                          className={no === activeBtn ? "btn active" : "btn"}
+                          onClick={() => {
+                            addActiveBtn(no);
+                          }}
+                          key={no}
+                        >
+                          {no}
+                        </div>
+                      ))}
+                    <div className="next" onClick={nextBtn}>
+                      Next
+                      <IoMdArrowDropright />
+                    </div>
+                  </div>
+                )}
+              </div>
+            </main>
+            <div className="searchCont" ref={filterRef}>
+              <h1>Filters</h1>
+              <MdCancel className="cancelBtn" onClick={openFilterRef} />
+              <div className="rows">
+                {skills &&
+                  skills.map((list) => (
+                    <div
+                      className={
+                        selectedFilter
+                          ? selectedFilter.includes(list._id)
+                            ? "btn active"
+                            : "btn"
+                          : "btn"
+                      }
+                      key={list._id}
+                      onClick={() => {
+                        setfilter(list._id);
+                      }}
+                    >
+                      {list.name}
+                    </div>
+                  ))}
+              </div>
+              <div className="rows">
+                <Select
+                  options={countryOption}
+                  name="country"
+                  defaultValue={{ label: "United States", value: "usa" }}
+                  placeholder={"- SELECT COUNTRY -"}
+                  styles={style}
+                  onChange={(e) => {
+                    setDesiredLocation(e.value);
+                  }}
+                  className="select"
+                />
+                <div
+                  className={
+                    officeLoc.includes("remote") ? "btn active" : "btn"
+                  }
+                  onClick={addlocOffice}
+                  data-index="remote"
+                >
+                  Open to remote
+                </div>
+                <div
+                  className={officeLoc.includes("site") ? "btn active" : "btn"}
+                  onClick={addlocOffice}
+                  data-index="site"
+                >
+                  On site
+                </div>
+              </div>
+              <div className="rows">
+                {roles &&
+                  roles.map((list) => (
+                    <div
+                      className={
+                        selectedJobtype
+                          ? selectedJobtype.includes(list._id)
+                            ? "btn active"
+                            : "btn"
+                          : "btn"
+                      }
+                      key={list._id}
+                      onClick={() => {
+                        setJobTypeSelected(list._id);
+                      }}
+                    >
+                      {list.name}
+                    </div>
+                  ))}
+              </div>
+              <button onClick={applyFilter}>Apply Filter</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <FAQSection />
+      </section>
+    </>
   );
 }
 

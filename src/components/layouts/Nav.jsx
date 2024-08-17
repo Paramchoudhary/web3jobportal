@@ -2,35 +2,50 @@ import React, { useEffect, useRef, useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import { RiUser3Line } from "react-icons/ri";
 import { IoIosArrowDown } from "react-icons/io";
-import { FaMoon, FaUser } from "react-icons/fa";
+import { FaMoon, FaSun, FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
-// import dpRef from "../../assets/images/dp.jpg"
 import { MdShield } from "react-icons/md";
 import { CiSettings } from "react-icons/ci";
 import { LiaSignOutAltSolid } from "react-icons/lia";
 
-function Nav({ setSignupPopUp }) {
-  const [bulb, setBulb] = useState(false);
-  const [tokenExists, setTokenExists] = useState(true);
+function Nav({ setSignupPopUp, isAuthenticated, setIsAuthenticated }) {
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const navRef = useRef(null);
   const dpRef = useRef(null);
-  const toggleBulb = (e) => {
-    // console.log(e.target);
-    setBulb(!bulb);
-    const root = document.documentElement; // Get the root element of the document
-    // Get the computed styles of the document's root element
-    const rootStyles = getComputedStyle(root);
-    // Retrieve the values of the CSS custom properties
-    const bgColor = rootStyles.getPropertyValue("--bg");
-    const textColor = rootStyles.getPropertyValue("--text");
-    const bxshadow = rootStyles.getPropertyValue("--bxshadow");
-    const bxshadow2 = rootStyles.getPropertyValue("--bxshadow2");
-    // Swap the values of --bg and --text
-    root.style.setProperty("--bg", textColor);
-    root.style.setProperty("--text", bgColor);
-    root.style.setProperty("--bxshadow2", bxshadow);
-    root.style.setProperty("--bxshadow", bxshadow2);
-    /** */
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setIsDarkMode(true);
+      applyDarkMode();
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+    if (!isDarkMode) {
+      applyDarkMode();
+      localStorage.setItem("theme", "dark");
+    } else {
+      applyLightMode();
+      localStorage.setItem("theme", "light");
+    }
+  };
+
+  const applyDarkMode = () => {
+    const root = document.documentElement;
+    root.style.setProperty("--bg", "#1a1a1a");
+    root.style.setProperty("--text", "#ffffff");
+    root.style.setProperty("--bxshadow", "rgba(255, 255, 255, 0.1)");
+    root.style.setProperty("--bxshadow2", "rgba(255, 255, 255, 0.05)");
+  };
+
+  const applyLightMode = () => {
+    const root = document.documentElement;
+    root.style.setProperty("--bg", "#ffffff");
+    root.style.setProperty("--text", "#000000");
+    root.style.setProperty("--bxshadow", "rgba(0, 0, 0, 0.1)");
+    root.style.setProperty("--bxshadow2", "rgba(0, 0, 0, 0.05)");
   };
 
   const openDp = (e) => {
@@ -43,14 +58,10 @@ function Nav({ setSignupPopUp }) {
     navRef.current.classList.toggle("active");
   };
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    setTokenExists(token ? true : false);
-  }, [localStorage.getItem("token")]);
-
   const logout = (e) => {
     e.preventDefault();
     localStorage.clear();
+    setIsAuthenticated(false);
     setTimeout(() => {
       window.location.href = "/";
     }, 1000);
@@ -69,22 +80,21 @@ function Nav({ setSignupPopUp }) {
       <ul>
         <li className="desk">
           <Link to="/degens">Find degens</Link>
-          {/* <IoIosArrowDown className="arr" /> */}
         </li>
         <li className="desk">
           <Link to="/">Jobs</Link>
         </li>
-
-        {/* <li>
-            <a href="">Login</a>
-          </li> */}
         <li>
-          <Link onClick={toggleBulb}>
-            <FaMoon className="icon" />
-          </Link>
+          <button onClick={toggleTheme} className="theme-toggle">
+            {isDarkMode ? (
+              <FaSun className="icon" />
+            ) : (
+              <FaMoon className="icon" />
+            )}
+          </button>
         </li>
         <li className="user">
-          {tokenExists ? (
+          {isAuthenticated ? (
             <>
               <Link to="/user/" onClick={openDp}>
                 <RiUser3Line className="icon" />
@@ -104,7 +114,7 @@ function Nav({ setSignupPopUp }) {
                 </li> */}
                 <li>
                   <Link to="/user/">
-                    <FaUser className="icon" /> 
+                    <FaUser className="icon" />
                     <span>Profile</span>
                   </Link>
                 </li>
@@ -117,15 +127,12 @@ function Nav({ setSignupPopUp }) {
               </ul>
             </>
           ) : (
-            <Link
-              to="sign"
-              onClick={(e) => {
-                e.preventDefault();
-                setSignupPopUp(true);
-              }}
+            <button
+              className="login-button"
+              onClick={() => setSignupPopUp(true)}
             >
-              <RiUser3Line className="icon" />
-            </Link>
+              Login
+            </button>
           )}
         </li>
       </ul>
