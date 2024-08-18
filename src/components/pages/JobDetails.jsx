@@ -9,6 +9,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { getJob } from "../../redux/degenwork";
 import { useDispatch, useSelector } from "react-redux";
 import { timeAgo } from "../../utils/utils";
+import complogo from "../../assets/images/company_logo.png";
 
 function JobDetails() {
   const dispatch = useDispatch();

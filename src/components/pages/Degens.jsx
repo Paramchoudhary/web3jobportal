@@ -210,11 +210,14 @@ function Degens({ setSignupPopUp }) {
       dispatch(fetchUsers({ from: activeBtn - 1 })).then(() =>
         setIsLoading(false)
     );
-  }else {
-    setIsLoading(false);
   }
+  
     dispatch(fetchSkills());
     dispatch(fetchRoles());
+
+    if(users && users.length > 0){
+      setIsLoading(false);
+    }
   }, [users]);
 
   //
