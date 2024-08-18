@@ -210,9 +210,11 @@ function Home() {
   useEffect(() => {
     if (!jobs) {
       setIsLoading(true);
-      dispatch(getJobs({ from: activeBtn - 1 })).then(() =>
-        setIsLoading(false)
-      );
+      dispatch(getJobs({ from: activeBtn - 1 })).then(() => {setIsLoading(false) 
+         });
+    }
+    else{
+      setIsLoading(false);
     }
     dispatch(fetchSkills());
     dispatch(fetchRoles());
@@ -468,8 +470,8 @@ function Home() {
                             </span>
                           </h4>
                           <ul>
-                            {job.stack.map((list) => (
-                              <li>{list}</li>
+                            {job.stack.map((list, index) => (
+                              <li key={index}>{list}</li>
                             ))}
                           </ul>
                         </div>

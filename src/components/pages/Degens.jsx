@@ -205,13 +205,17 @@ function Degens({ setSignupPopUp }) {
   }, []);
 
   useEffect(() => {
-    setIsLoading(true);
-    dispatch(fetchUsers({ from: activeBtn - 1 })).then(() =>
-      setIsLoading(false)
+    if(!users){
+      setIsLoading(true);
+      dispatch(fetchUsers({ from: activeBtn - 1 })).then(() =>
+        setIsLoading(false)
     );
+  }else {
+    setIsLoading(false);
+  }
     dispatch(fetchSkills());
     dispatch(fetchRoles());
-  }, []);
+  }, [users]);
 
   //
   // Get Degens
