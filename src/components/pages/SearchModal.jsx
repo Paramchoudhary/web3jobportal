@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import "../../assets/css/searchModal.css";
 
 function SearchModal({ isOpen, onClose }) {
   const [searchTerm, setSearchTerm] = useState("");
@@ -33,6 +34,7 @@ function SearchModal({ isOpen, onClose }) {
 
   return (
     <div className="search-modal">
+      <div className="search-modal-overlay" onClick={onClose}></div>
       <div className="search-modal-content">
         <input
           id="search-input"
