@@ -18,6 +18,7 @@ import { GoFilter } from "react-icons/go";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchRoles, fetchSkills, fetchUsers } from "../../redux/degenwork";
 import { truncateString } from "../../utils/utils";
+import { Helmet } from "react-helmet";
 
 function Degens({ setSignupPopUp }) {
   const dispatch = useDispatch();
@@ -111,7 +112,11 @@ function Degens({ setSignupPopUp }) {
   const [btns, setBtns] = useState([]);
   const [activeBtn, setActiveBtn] = useState(1);
 
-  const { users, usersCount , skills, roles } = useSelector((state) => state.degenwork);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const { users, usersCount, skills, roles } = useSelector(
+    (state) => state.degenwork
+  );
 
   const style = {
     control: (base, state) => ({
@@ -200,7 +205,10 @@ function Degens({ setSignupPopUp }) {
   }, []);
 
   useEffect(() => {
-    dispatch(fetchUsers({ from: activeBtn - 1 }));
+    setIsLoading(true);
+    dispatch(fetchUsers({ from: activeBtn - 1 })).then(() =>
+      setIsLoading(false)
+    );
     dispatch(fetchSkills());
     dispatch(fetchRoles());
   }, []);
@@ -322,172 +330,215 @@ function Degens({ setSignupPopUp }) {
     dispatch(fetchUsers({ ...val }));
   };
 
-  return (
-    <section className="degen">
-      <h1>Search degens</h1>
-      <div className="child">
-        <main>
-          <form action="" onSubmit={searchName}>
-            <label htmlFor="text">
-              <IoIosSearch className="icon" />
-            </label>
-            <input
-              type="text"
-              name="text"
-              placeholder="Search by company, skill, tag"
-            />
-          </form>
-          <div className="txtcont">
-            <h1>Our Degens</h1>
-            <h4 className="filter" onClick={openFilterRef}>
-              <GoFilter /> Filters
-            </h4>
+  const SkeletonLoader = () => (
+    <div className="skeleton-loader degen">
+      {[...Array(12)].map((i) => (
+        <div key={i} className="box skeleton-box">
+          <div className="skeleton-dpcont">
+            <div className="skeleton-dp"></div>
+            <div className="skeleton-dptxt">
+              <div className="skeleton-username"></div>
+              <div className="skeleton-skill"></div>
+            </div>
           </div>
-          <div className="rows">
-            {users &&
-              users.map((user) => (
-                <div className="box" key={user._id}>
-                  <div className="dpcont">
-                    <img
-                      src={user?.dp ? user?.dp : dp3}
-                      alt="dp"
-                      className="dp"
-                    />
-                    <div className="dptxt">
-                      <h3>
-                        {user?.username
-                          ? user?.username
-                          : truncateString(user?.email)}
-                      </h3>
-                      <h4>{user?.skills ? user.skills[0] : ""}</h4>
+          <div className="skeleton-links">
+            <div className="skeleton-icon"></div>
+            <div className="skeleton-icon"></div>
+            <div className="skeleton-icon"></div>
+          </div>
+          <div className="skeleton-view">
+            <div className="skeleton-btn"></div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+
+  return (
+    <>
+      <Helmet>
+        <title>Search Degens | web3jobportal</title>
+        <meta
+          name="description"
+          content="Find and connect with talented degens."
+        />
+      </Helmet>
+      <section className="degen">
+        <h1>Search degens</h1>
+        <div className="child">
+          <main>
+            <form action="" onSubmit={searchName}>
+              <label htmlFor="text">
+                <IoIosSearch className="icon" />
+              </label>
+              <input
+                type="text"
+                name="text"
+                placeholder="Search by company, skill, tag"
+              />
+            </form>
+            <div className="txtcont">
+              <h1>Our Degens</h1>
+              <h4 className="filter" onClick={openFilterRef}>
+                <GoFilter /> Filters
+              </h4>
+            </div>
+            <div className="rows">
+              {isLoading ? (
+                <SkeletonLoader />
+              ) : users && users.length > 0 ? (
+                users.map((user) => (
+                  <div className="box" key={user._id}>
+                    <div className="dpcont">
+                      <img
+                        src={user?.dp ? user?.dp : dp3}
+                        alt="dp"
+                        className="dp"
+                      />
+                      <div className="dptxt">
+                        <h3>
+                          {user?.username
+                            ? user?.username
+                            : truncateString(user?.email)}
+                        </h3>
+                        <h4>{user?.skills ? user.skills[0] : ""}</h4>
+                      </div>
+                    </div>
+                    <ul className="links">
+                      <li>
+                        <Link href="#">
+                          <FaLinkedin className="icon" />
+                        </Link>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <FaDiscord className="icon" />
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <FaXTwitter className="icon" />
+                        </a>
+                      </li>
+                    </ul>
+                    <div className="view">
+                      <Link
+                        to={`/degen/${user._id}`}
+                        onClick={checkUserLoggedin}
+                        className="btn"
+                      >
+                        View Degen
+                      </Link>
                     </div>
                   </div>
-                  <ul className="links">
-                    <li>
-                      <Link href="#">
-                        <FaLinkedin className="icon" />
-                      </Link>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <FaDiscord className="icon" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <FaXTwitter className="icon" />
-                      </a>
-                    </li>
-                  </ul>
-                  <div className="view">
-                    <Link
-                      to={`/degen/${user._id}`}
-                      onClick={checkUserLoggedin}
-                      className="btn"
-                    >
-                      View Degen
-                    </Link>
+                ))
+              ) : (
+                <div className="no-results-found">
+                  <h2>No degens found</h2>
+                  <p>Try adjusting your search criteria or filters.</p>
+                </div>
+              )}
+              {users && users.length > 0 && (
+                <div className="morecont">
+                  <div className="prev" onClick={prevBtn}>
+                    <IoMdArrowDropleft />
+                    Previous
+                  </div>
+                  {btns &&
+                    btns.map((no) => (
+                      <div
+                        className={no === activeBtn ? "btn active" : "btn"}
+                        onClick={() => {
+                          addActiveBtn(no);
+                        }}
+                        key={no}
+                      >
+                        {no}
+                      </div>
+                    ))}
+                  <div className="next" onClick={nextBtn}>
+                    Next
+                    <IoMdArrowDropright />
                   </div>
                 </div>
-              ))}
-            <div className="morecont">
-              <div className="prev" onClick={prevBtn}>
-                <IoMdArrowDropleft />
-                Previous
-              </div>
-              {btns &&
-                btns.map((no) => (
+              )}
+            </div>
+          </main>
+          <div className="searchCont" ref={filterRef}>
+            <h1>Filters</h1>
+            <MdCancel className="cancelBtn" onClick={openFilterRef} />
+            <div className="rows">
+              {skills &&
+                skills.map((list) => (
                   <div
-                    className={no === activeBtn ? "btn active" : "btn"}
+                    className={
+                      selectedFilter
+                        ? selectedFilter.includes(list._id)
+                          ? "btn active"
+                          : "btn"
+                        : "btn"
+                    }
+                    key={list._id}
                     onClick={() => {
-                      addActiveBtn(no);
+                      setfilter(list._id);
                     }}
-                    key={no}
                   >
-                    {no}
+                    {list.name}
                   </div>
                 ))}
-              <div className="next" onClick={nextBtn}>
-                Next
-                <IoMdArrowDropright />
+            </div>
+            <div className="rows">
+              <Select
+                options={countryOption}
+                name="country"
+                defaultValue={{ label: "United States", value: "usa" }}
+                placeholder={"- SELECT COUNTRY -"}
+                onChange={(e) => {
+                  setDesiredLocation(e.value);
+                }}
+                styles={style}
+                className="select"
+              />
+              <div
+                className={officeLoc.includes("remote") ? "btn active" : "btn"}
+                onClick={addlocOffice}
+                data-index="remote"
+              >
+                Open to remote
+              </div>
+              <div
+                className={officeLoc.includes("site") ? "btn active" : "btn"}
+                onClick={addlocOffice}
+                data-index="site"
+              >
+                On site
               </div>
             </div>
-          </div>
-        </main>
-        <div className="searchCont" ref={filterRef}>
-          <h1>Filters</h1>
-          <MdCancel className="cancelBtn" onClick={openFilterRef} />
-          <div className="rows">
-            {skills &&
-              skills.map((list) => (
-                <div
-                  className={
-                    selectedFilter
-                      ? selectedFilter.includes(list._id)
-                        ? "btn active"
+            <div className="rows">
+              {roles &&
+                roles.map((list) => (
+                  <div
+                    className={
+                      selectedJobtype
+                        ? selectedJobtype.includes(list._id)
+                          ? "btn active"
+                          : "btn"
                         : "btn"
-                      : "btn"
-                  }
-                  key={list._id}
-                  onClick={() => {
-                    setfilter(list._id);
-                  }}
-                >
-                  {list.name}
-                </div>
-              ))}
-          </div>
-          <div className="rows">
-            <Select
-              options={countryOption}
-              name="country"
-              defaultValue={{ label: "United States", value: "usa" }}
-              placeholder={"- SELECT COUNTRY -"}
-              onChange={(e) => {
-                setDesiredLocation(e.value);
-              }}
-              styles={style}
-              className="select"
-            />
-            <div
-              className={officeLoc.includes("remote") ? "btn active" : "btn"}
-              onClick={addlocOffice}
-              data-index="remote"
-            >
-              Open to remote
+                    }
+                    key={list._id}
+                    onClick={() => {
+                      setJobTypeSelected(list._id);
+                    }}
+                  >
+                    {list.name}
+                  </div>
+                ))}
             </div>
-            <div
-              className={officeLoc.includes("site") ? "btn active" : "btn"}
-              onClick={addlocOffice}
-              data-index="site"
-            >
-              On site
-            </div>
+            <button onClick={applyFilter}>Apply Filter</button>
           </div>
-          <div className="rows">
-            {roles &&
-              roles.map((list) => (
-                <div
-                  className={
-                    selectedJobtype
-                      ? selectedJobtype.includes(list._id)
-                        ? "btn active"
-                        : "btn"
-                      : "btn"
-                  }
-                  key={list._id}
-                  onClick={() => {
-                    setJobTypeSelected(list._id);
-                  }}
-                >
-                  {list.name}
-                </div>
-              ))}
-          </div>
-          <button onClick={applyFilter}>Apply Filter</button>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
 

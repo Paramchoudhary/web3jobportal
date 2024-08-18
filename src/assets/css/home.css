@@ -443,6 +443,139 @@ font-family: "Andika", sans-serif;
   display: none;
 }
 
+/* Skeleton Loader */
+
+.skeleton-loader.job {
+  width: 100%;
+}
+
+.skeleton-loader.job .skeleton-job {
+  margin-bottom: 20px;
+  padding: 20px;
+  background: var(--bg);
+  border-radius: 8px;
+  box-shadow: var(--bxshadow2);
+}
+
+.skeleton-loader.job .skeleton-dpcont {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.skeleton-loader.job .skeleton-dp {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  margin-right: 15px;
+}
+
+.skeleton-loader.job .skeleton-dptxt {
+  flex-grow: 1;
+}
+
+.skeleton-loader.job .skeleton-subtext {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.skeleton-loader.job .skeleton-companyName {
+  width: 150px;
+  height: 20px;
+  background: #e0e0e0;
+  border-radius: 4px;
+}
+
+.skeleton-loader.job .skeleton-logo {
+  width: 30px;
+  height: 30px;
+  background: #e0e0e0;
+  border-radius: 50%;
+}
+
+.skeleton-loader.job .skeleton-position {
+  width: 200px;
+  height: 24px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.skeleton-loader.job .skeleton-stack {
+  display: flex;
+  gap: 10px;
+}
+
+.skeleton-loader.job .skeleton-stack-item {
+  width: 60px;
+  height: 24px;
+  background: #e0e0e0;
+  border-radius: 12px;
+}
+
+.skeleton-loader.job .skeleton-cont {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.skeleton-loader.job .skeleton-prime,
+.skeleton-loader.job .skeleton-loc {
+  width: 100px;
+  height: 16px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  margin: 0 10px;
+}
+
+.skeleton-loader.job .skeleton-view {
+  display: flex;
+  gap: 10px;
+}
+
+.skeleton-loader.job .skeleton-btn {
+  width: 100px;
+  height: 36px;
+  background: #e0e0e0;
+  border-radius: 4px;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+.skeleton-loader.job .skeleton-job * {
+  animation: pulse 1.5s infinite;
+}
+
+/* no jobs found styles */
+.no-jobs-found {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--bg);
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.no-jobs-found h2 {
+  margin-bottom: 12px !important;
+  color: var(--text);
+}
+
+.no-jobs-found p {
+  color: var(--text);
+}
+
 /* ************MEDIA QUERRY********************** */
 
 /* ********@MOBILE********* */
@@ -698,5 +831,76 @@ font-family: "Andika", sans-serif;
   }
   .container section.home .jobsCont .child .searchCont .rows:last-child {
     box-shadow: none;
+  }
+}
+/* skeleton loader responsiveness */
+
+@media (max-width: 768px) {
+  .skeleton-loader.job .skeleton-job {
+    padding: 1.5em;
+  }
+
+  .skeleton-loader.job .skeleton-dp {
+    width: 4em;
+    height: 4em;
+    margin-right: 1em;
+  }
+
+  .skeleton-loader.job .skeleton-companyName {
+    width: 50%;
+  }
+
+  .skeleton-loader.job .skeleton-position {
+    width: 70%;
+  }
+
+  .skeleton-loader.job .skeleton-stack-item {
+    width: 5em;
+  }
+
+  .skeleton-loader.job .skeleton-prime,
+  .skeleton-loader.job .skeleton-loc {
+    width: 40%;
+  }
+
+  .skeleton-loader.job .skeleton-btn {
+    width: 48%;
+  }
+}
+
+@media (max-width: 480px) {
+  .skeleton-loader.job .skeleton-job {
+    padding: 1em;
+  }
+
+  .skeleton-loader.job .skeleton-dp {
+    width: 3em;
+    height: 3em;
+  }
+
+  .skeleton-loader.job .skeleton-companyName {
+    width: 60%;
+  }
+
+  .skeleton-loader.job .skeleton-position {
+    width: 80%;
+  }
+
+  .skeleton-loader.job .skeleton-stack-item {
+    width: 4em;
+  }
+
+  .skeleton-loader.job .skeleton-prime,
+  .skeleton-loader.job .skeleton-loc {
+    width: 45%;
+  }
+
+  .skeleton-loader.job .skeleton-btn {
+    width: 100%;
+    margin-bottom: 0.5em;
+  }
+
+  .skeleton-loader.job .skeleton-view {
+    flex-direction: column;
   }
 }
