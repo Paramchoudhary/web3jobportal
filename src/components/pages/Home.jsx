@@ -213,11 +213,13 @@ function Home() {
       dispatch(getJobs({ from: activeBtn - 1 })).then(() => {setIsLoading(false) 
          });
     }
-    else{
-      setIsLoading(false);
-    }
+    
     dispatch(fetchSkills());
     dispatch(fetchRoles());
+
+    if(jobs && jobs.length > 0){
+      setIsLoading(false);
+    }
   }, [jobs]);
 
   // Get jobs
