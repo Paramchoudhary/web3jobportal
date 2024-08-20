@@ -288,12 +288,12 @@ function Home() {
     const desiredRoles = [];
     if (selectedFilter && selectedFilter.length >= 1) {
       for (let i = 0; i < selectedFilter.length; i++) {
-        desiredStack.push(filters[selectedFilter[i]]);
+        desiredStack.push(selectedFilter[i]);
       }
     }
     if (selectedJobtype && selectedJobtype.length >= 1) {
       for (let i = 0; i < selectedJobtype.length; i++) {
-        desiredRoles.push(jobType[selectedJobtype[i]]);
+        desiredRoles.push(selectedJobtype[i]);
       }
     }
     // console.log(desiredStack, desiredRoles, officeLoc, activeBtn);
@@ -540,14 +540,14 @@ function Home() {
                     <div
                       className={
                         selectedFilter
-                          ? selectedFilter.includes(list._id)
+                          ? selectedFilter.includes(list.name)
                             ? "btn active"
                             : "btn"
                           : "btn"
                       }
                       key={list._id}
                       onClick={() => {
-                        setfilter(list._id);
+                        setfilter(list.name);
                       }}
                     >
                       {list.name}
@@ -589,14 +589,14 @@ function Home() {
                     <div
                       className={
                         selectedJobtype
-                          ? selectedJobtype.includes(list._id)
+                          ? selectedJobtype.includes(list.name)
                             ? "btn active"
                             : "btn"
                           : "btn"
                       }
                       key={list._id}
                       onClick={() => {
-                        setJobTypeSelected(list._id);
+                        setJobTypeSelected(list.name);
                       }}
                     >
                       {list.name}

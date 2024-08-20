@@ -18,6 +18,7 @@ import { GoFilter } from "react-icons/go";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchRoles, fetchSkills, fetchUsers } from "../../redux/degenwork";
 import { truncateString } from "../../utils/utils";
+import location from "../../assets/images/location.svg";
 import { Helmet } from "react-helmet";
 
 function Degens({ setSignupPopUp }) {
@@ -205,17 +206,17 @@ function Degens({ setSignupPopUp }) {
   }, []);
 
   useEffect(() => {
-    if(!users){
+    if (!users) {
       setIsLoading(true);
       dispatch(fetchUsers({ from: activeBtn - 1 })).then(() =>
         setIsLoading(false)
-    );
-  }
-  
+      );
+    }
+
     dispatch(fetchSkills());
     dispatch(fetchRoles());
 
-    if(users && users.length > 0){
+    if (users && users.length > 0) {
       setIsLoading(false);
     }
   }, [users]);
@@ -311,12 +312,12 @@ function Degens({ setSignupPopUp }) {
     const desiredRoles = [];
     if (selectedFilter && selectedFilter.length >= 1) {
       for (let i = 0; i < selectedFilter.length; i++) {
-        desiredStack.push(filters[selectedFilter[i]]);
+        desiredStack.push(selectedFilter[i]);
       }
     }
     if (selectedJobtype && selectedJobtype.length >= 1) {
       for (let i = 0; i < selectedJobtype.length; i++) {
-        desiredRoles.push(jobType[selectedJobtype[i]]);
+        desiredRoles.push(selectedJobtype[i]);
       }
     }
     // console.log(desiredStack, desiredRoles, officeLoc, activeBtn);
@@ -408,26 +409,19 @@ function Degens({ setSignupPopUp }) {
                             ? user?.username
                             : truncateString(user?.email)}
                         </h3>
-                        <h4>{user?.skills ? user.skills[0] : ""}</h4>
+                        <h4>
+                          <img src={location} alt="location" />
+                          {user?.location}
+                        </h4>
+                        <ul>
+                          {user?.skills &&
+                            user?.skills.map((list, idx) => (
+                              <li key={idx}>{list}</li>
+                            ))}
+                        </ul>
+                        <p>{user.bio}</p>
                       </div>
                     </div>
-                    <ul className="links">
-                      <li>
-                        <Link href="#">
-                          <FaLinkedin className="icon" />
-                        </Link>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <FaDiscord className="icon" />
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <FaXTwitter className="icon" />
-                        </a>
-                      </li>
-                    </ul>
                     <div className="view">
                       <Link
                         to={`/degen/${user._id}`}
@@ -480,14 +474,14 @@ function Degens({ setSignupPopUp }) {
                   <div
                     className={
                       selectedFilter
-                        ? selectedFilter.includes(list._id)
+                        ? selectedFilter.includes(list.name)
                           ? "btn active"
                           : "btn"
                         : "btn"
                     }
                     key={list._id}
                     onClick={() => {
-                      setfilter(list._id);
+                      setfilter(list.name);
                     }}
                   >
                     {list.name}
@@ -527,14 +521,14 @@ function Degens({ setSignupPopUp }) {
                   <div
                     className={
                       selectedJobtype
-                        ? selectedJobtype.includes(list._id)
+                        ? selectedJobtype.includes(list.name)
                           ? "btn active"
                           : "btn"
                         : "btn"
                     }
                     key={list._id}
                     onClick={() => {
-                      setJobTypeSelected(list._id);
+                      setJobTypeSelected(list.name);
                     }}
                   >
                     {list.name}
