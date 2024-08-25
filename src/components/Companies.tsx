@@ -8,7 +8,7 @@ export const Companies = () => {
       {arr.map((Logo, index) => (
         <div
           key={index}
-          className="relative h-full w-fit mx-[4rem] flex items-center justify-start"
+          className="relative h-auto w-fit mx-[4rem] flex items-center justify-start"
         >
           <Logo />
         </div>

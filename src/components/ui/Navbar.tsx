@@ -3,7 +3,7 @@ import { Dropdown, Tabs, Tab, TriggerWrapper, Trigger } from "./dropdown";
 
 const Navbar = () => {
   return (
-    <div className="flex fixed  h-96 z-[9999] w-full justify-center p-8 text-neutral-200 md:justify-center">
+    <div className="flex fixed  h-auto z-[9999] w-full justify-center p-8 text-neutral-200 md:justify-center">
       <Dropdown>
         <TriggerWrapper>
           <Trigger>Find Jobs</Trigger>
@@ -35,7 +35,7 @@ const FindJobs = () => (
         "text-white font-bold text-3xl flex items-end justify-start p-4 w-56 h-[200px] rounded-md bg-gradient-to-br [background-size:150%] from-accent via-secondary to-primary"
       }
     >
-      We <br /> Create
+      Web3 <br /> Jobs
     </div>
     <div className={"flex flex-col gap-3"}>
       <div>

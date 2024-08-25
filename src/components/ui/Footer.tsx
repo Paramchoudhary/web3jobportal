@@ -48,7 +48,7 @@ const Footer = () => {
   return (
     <>
       <motion.footer
-        className="bg-gradient-to-b to-secondary from-transparent py-12 pb-0 px-10 font-sans tracking-wide"
+        className="bg-gradient-to-b backdrop-blur-[2px] to-secondary from-transparent py-12 pb-0 px-10 font-sans tracking-wide"
         variants={containerVariants}
         initial="hidden"
         animate={controls}
@@ -120,7 +120,7 @@ const Footer = () => {
             <motion.ul className="space-y-4" variants={itemVariants}>
               <li>
                 <a
-                  href="javascript:void(0)"
+                  href="#"
                   className="text-gray-400 hover:text-white text-[15px]"
                 >
                   Web Development
@@ -128,7 +128,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="javascript:void(0)"
+                  href="#"
                   className="text-gray-400 hover:text-white text-[15px]"
                 >
                   Mobile App Development
@@ -136,7 +136,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="javascript:void(0)"
+                  href="#"
                   className="text-gray-400 hover:text-white text-[15px]"
                 >
                   UI/UX Design
@@ -144,7 +144,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="javascript:void(0)"
+                  href="#"
                   className="text-gray-400 hover:text-white text-[15px]"
                 >
                   Digital Marketing
@@ -163,7 +163,7 @@ const Footer = () => {
             <motion.ul className="space-y-4" variants={itemVariants}>
               <li>
                 <a
-                  href="javascript:void(0)"
+                  href="#"
                   className="text-gray-400 hover:text-white text-[15px]"
                 >
                   Webinars
@@ -171,7 +171,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="javascript:void(0)"
+                  href="#"
                   className="text-gray-400 hover:text-white text-[15px]"
                 >
                   Ebooks
@@ -179,7 +179,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="javascript:void(0)"
+                  href="#"
                   className="text-gray-400 hover:text-white text-[15px]"
                 >
                   Templates
@@ -187,7 +187,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="javascript:void(0)"
+                  href="#"
                   className="text-gray-400 hover:text-white text-[15px]"
                 >
                   Tutorials
@@ -206,7 +206,7 @@ const Footer = () => {
             <motion.ul className="space-y-4" variants={itemVariants}>
               <li>
                 <a
-                  href="javascript:void(0)"
+                  href="#"
                   className="text-gray-400 hover:text-white text-[15px]"
                 >
                   Our Story
@@ -214,7 +214,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="javascript:void(0)"
+                  href="#"
                   className="text-gray-400 hover:text-white text-[15px]"
                 >
                   Mission and Values
@@ -222,7 +222,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="javascript:void(0)"
+                  href="#"
                   className="text-gray-400 hover:text-white text-[15px]"
                 >
                   Team
@@ -230,7 +230,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="javascript:void(0)"
+                  href="#"
                   className="text-gray-400 hover:text-white text-[15px]"
                 >
                   Testimonials
