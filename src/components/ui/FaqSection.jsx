@@ -65,23 +65,23 @@ const AccordionItem = ({ question, answer, isActive, onClick }) => {
 
 const questions = [
   {
-    question: "Why do you like web development?",
+    question: "What is web3jobPortal ?",
     answer:
-      "I enjoy web development because it allows me to create interactive, functional, and visually appealing websites that can make a real impact on users.",
+      "web3jobPortal is a specialized job portal focused on connecting talent with opportunities in the Web3 space, including blockchain, DeFi, NFTs, and other decentralized technologies.",
   },
   {
-    question: "What is your favorite programming language?",
+    question: "How do I create a profile?",
     answer:
-      "JavaScript is my favorite language due to its versatility and the vast ecosystem that allows me to build everything from front-end interfaces to back-end services.",
+      "To create a profile, click on the "Sign Up" button at the top right corner of the homepage. You can sign up using your email, Google account. Once registered, you can complete your profile by adding your skills, experience, and preferences.
+",
   },
   {
-    question: "How long have you been coding?",
+    question: "Is it free to create a profile and apply for jobs?",
     answer:
-      "I've been coding for over 5 years, starting with basic HTML/CSS and progressing to full-stack development.",
+      "Yes, creating a profile and applying for jobs is completely free.",
   },
   {
-    question: "What projects are you most proud of?",
-    answer:
-      "I'm particularly proud of a recent project where I developed a complete e-commerce platform using Next.js, integrating it with various APIs for payment processing and inventory management.",
+    question: "How do I post a job listing?",
+    answer: "To post a job, click on the "Post a Job" button on the homepage. You’ll be guided through a form to fill out the job details, select the features you want (e.g., featured listing, premium placement), and proceed to payment.",
   },
 ];
