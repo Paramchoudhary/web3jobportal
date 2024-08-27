@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --radial-gradient-background: 241, 1, 231; /* primary color */
+  --solid-color-background: 18, 18, 18; /* background color */
+  --overlay-color: 255, 255, 255; /* text color */
+}
+
 /* Your existing global CSS to hide scrollbars */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
@@ -19,4 +25,42 @@ body::-webkit-scrollbar {
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent;
+}
+/* Shiny Button */
+
+.radial-gradient {
+  background: radial-gradient(
+      circle at 50% 0%,
+      rgba(var(--solid-color-background), 0.15) 0%,
+      transparent 60%
+    )
+    rgba(var(--radial-gradient-background), 0.15);
+}
+.linear-mask {
+  mask-image: linear-gradient(
+    -75deg,
+    white calc(var(--x) + 20%),
+    transparent calc(var(--x) + 30%),
+    white calc(var(--x) + 100%)
+  );
+  -webkit-mask-image: linear-gradient(
+    -75deg,
+    white calc(var(--x) + 20%),
+    transparent calc(var(--x) + 30%),
+    white calc(var(--x) + 100%)
+  );
+}
+
+.linear-overlay {
+  background-image: linear-gradient(
+    -75deg,
+    rgba(var(--overlay-color), 0.1) calc(var(--x) + 20%),
+    rgba(var(--overlay-color), 0.3) calc(var(--x) + 25%),
+    rgba(var(--overlay-color), 0.1) calc(var(--x) + 100%)
+  );
+  mask: linear-gradient(black, black) content-box, linear-gradient(black, black);
+  -webkit-mask: linear-gradient(black, black) content-box,
+    linear-gradient(black, black);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
 }

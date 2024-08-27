@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FlipWords } from "@/components/ui/flip-word";
+import Badge from "./Badge";
+import ShinyButton from "./ShinyButton";
 
 const GlobeVideo = () => {
   const words = ["Web3", "NFTs", "Blockchain", "Solidity", "DAOs"];
@@ -29,16 +31,9 @@ const GlobeVideo = () => {
             transition={{ duration: 1 }}
           >
             <div className="max-w-xl space-y-3 mx-auto">
-              <motion.h3
-                className="text-accent font-semibold"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5 }}
-              >
-                funnnnn
-              </motion.h3>
+              <Badge text="Find the best jobs 🚀" />
               <motion.p
-                className="text-primary whitespace-nowrap text-3xl font-semibold sm:text-4xl"
+                className="text-text whitespace-nowrap text-3xl font-semibold sm:text-4xl"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.7 }}
@@ -46,7 +41,7 @@ const GlobeVideo = () => {
                 Unlock Your Future in <FlipWords words={words} /> <br />
               </motion.p>
               <motion.p
-                className="text-secondary"
+                className="text-primary"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.9 }}
@@ -61,14 +56,7 @@ const GlobeVideo = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 1.1 }}
             >
-              <motion.a
-                href="javascript:void(0)"
-                className="inline-block py-2 px-4 text-black font-medium bg-accent duration-150 hover:bg-primary hover:text-white active:bg-secondary rounded-lg shadow-md hover:shadow-none"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Post Job
-              </motion.a>
+              <ShinyButton text="Get Started" />
             </motion.div>
           </motion.div>
         </section>

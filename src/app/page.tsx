@@ -7,6 +7,7 @@ import GlobeVideo from "@/components/ui/GlobeVideo";
 import ContactForm from "@/components/ContactForm";
 import { Companies } from "@/components/Companies";
 import Faq from "@/components/Faq";
+import JobSection from "@/components/JobSection";
 
 const Globe = dynamic(
   () => import("@/components/ui/Globe").then((m) => m.Globe),
@@ -20,6 +21,7 @@ const HomePage = () => {
     <>
       {/* <Globe /> */}
       <GlobeVideo />
+      <JobSection />
       <Companies />
       <FeaturesSection />
       <Faq />

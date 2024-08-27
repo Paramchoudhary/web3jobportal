@@ -1,9 +1,13 @@
+"use client";
 import React from "react";
 import { Dropdown, Tabs, Tab, TriggerWrapper, Trigger } from "./dropdown";
+import ShinyButton from "./ShinyButton";
+import Logo from "./Logo";
 
 const Navbar = () => {
   return (
-    <div className="flex fixed  h-auto z-[9999] w-full justify-center p-8 text-neutral-200 md:justify-center">
+    <div className="flex fixed  h-auto z-[9999] w-full justify-between p-8 text-neutral-200 md:justify-between">
+      <Logo />
       <Dropdown>
         <TriggerWrapper>
           <Trigger>Find Jobs</Trigger>
@@ -22,6 +26,9 @@ const Navbar = () => {
           </Tab>
         </Tabs>
       </Dropdown>
+      <div>
+        <ShinyButton text={"Post Job"} />
+      </div>
     </div>
   );
 };

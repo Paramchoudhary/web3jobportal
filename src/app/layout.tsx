@@ -20,6 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <meta
+        name="google-site-verification"
+        content="nhRfXle5OXFKWN-0DTxovy31T0P3Q6mAfVs845GnzZY"
+      />
       <body
         className={cn(
           inter.className,
@@ -28,7 +32,7 @@ export default function RootLayout({
       >
         <StarsCanvas />
         <Navbar />
-        {children}
+        <div className="px-2 md:p-0">{children}</div>
         <Footer />
       </body>
     </html>

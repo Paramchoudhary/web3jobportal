@@ -123,7 +123,7 @@ export const Tabs: React.FC<{
         <div className="absolute -top-[6px] left-0 right-0 h-[6px]" />
         <div
           className={cn(
-            "rounded-md border bg-[#101827] backdrop-blur-xl transition-all duration-300 border-neutral-800",
+            "rounded-md border bg-[#101827ad] backdrop-blur-xl transition-all duration-300 border-neutral-800",
             className
           )}
         >
