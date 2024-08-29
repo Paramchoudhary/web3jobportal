@@ -5,6 +5,7 @@ import StarsCanvas from "@/components/ui/StarBackground";
 import Navbar from "@/components/ui/Navbar";
 import { cn } from "@/lib/utils";
 import Footer from "@/components/ui/Footer";
+import CookiesConsent from "@/components/CookiesConsent";
 
 const chakra = Chakra_Petch({
   subsets: ["latin"],
@@ -42,6 +43,7 @@ export default function RootLayout({
         <Navbar />
         <div className="px-2 md:p-0">{children}</div>
         <Footer />
+        <CookiesConsent />
       </body>
     </html>
   );
