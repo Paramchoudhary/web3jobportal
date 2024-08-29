@@ -1,35 +1,44 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Dropdown, Tabs, Tab, TriggerWrapper, Trigger } from "./dropdown";
 import ShinyButton from "./ShinyButton";
 import Logo from "./Logo";
+import SignupLogin from "./modal/SignupLogin";
+import Modal from "./modal";
 
 const Navbar = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
-    <div className="flex fixed  h-auto z-[9999] w-full justify-between p-8 text-neutral-200 md:justify-between">
-      <Logo />
-      <Dropdown>
-        <TriggerWrapper>
-          <Trigger>Find Jobs</Trigger>
-          <Trigger>Degens</Trigger>
-          <Trigger>Blogs</Trigger>
-        </TriggerWrapper>
-        <Tabs>
-          <Tab>
-            <FindJobs />
-          </Tab>
-          <Tab>
-            <Degens />
-          </Tab>
-          <Tab>
-            <Blog />
-          </Tab>
-        </Tabs>
-      </Dropdown>
-      <div>
-        <ShinyButton text={"Post Job"} />
+    <>
+      <div className="flex fixed  h-auto z-[9999] w-full justify-between p-8 text-neutral-200 md:justify-between">
+        <Logo />
+        <Dropdown>
+          <TriggerWrapper>
+            <Trigger>Find Jobs</Trigger>
+            <Trigger>Degens</Trigger>
+            <Trigger>Blogs</Trigger>
+          </TriggerWrapper>
+          <Tabs>
+            <Tab>
+              <FindJobs />
+            </Tab>
+            <Tab>
+              <Degens />
+            </Tab>
+            <Tab>
+              <Blog />
+            </Tab>
+          </Tabs>
+        </Dropdown>
+        <div>
+          <ShinyButton onClick={() => setIsModalOpen(true)} text={"Post Job"} />
+        </div>
       </div>
-    </div>
+      <Modal isOpen={isModalOpen} setIsOpen={setIsModalOpen}>
+        <SignupLogin close={() => setIsModalOpen(false)} />
+      </Modal>
+    </>
   );
 };
 

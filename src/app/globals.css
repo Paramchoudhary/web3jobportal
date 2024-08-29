@@ -7,6 +7,10 @@
   --solid-color-background: 18, 18, 18; /* background color */
   --overlay-color: 255, 255, 255; /* text color */
 }
+/* reset */
+#reset-this-root {
+  all: unset;
+}
 
 /* Your existing global CSS to hide scrollbars */
 .scrollbar-hide::-webkit-scrollbar {
@@ -63,4 +67,72 @@ body::-webkit-scrollbar {
     linear-gradient(black, black);
   mask-composite: exclude;
   -webkit-mask-composite: xor;
+}
+
+/* input field */
+
+.mask-with-browser-support {
+  -webkit-mask: linear-gradient(#000, #000), linear-gradient(#000, #000);
+  mask: linear-gradient(#000, #000), linear-gradient(#000, #000);
+  mask-clip: content-box, border-box;
+  mask-composite: exclude;
+  -webkit-mask: linear-gradient(#000, #000) content-box,
+    linear-gradient(#000, #000);
+  -webkit-mask-clip: content-box, border-box;
+  -webkit-mask-composite: xor;
+}
+
+/* input styles */
+@layer components {
+  .input-base {
+    @apply w-full px-3 py-2 bg-neutral-700/50 border border-neutral-600 rounded-full text-white placeholder-neutral-400 transition-all duration-200 ease-in-out;
+  }
+
+  .input-base:hover {
+    @apply border-neutral-500;
+  }
+
+  .input-base:focus {
+    @apply outline-none ring-2 ring-primary border-transparent;
+  }
+
+  .input-base:active {
+    @apply bg-neutral-600/50;
+  }
+
+  .input-error {
+    @apply border-error;
+  }
+
+  .input-error:focus {
+    @apply ring-error;
+  }
+
+  .input-success {
+    @apply border-success;
+  }
+
+  .input-success:focus {
+    @apply ring-success;
+  }
+
+  .input-label {
+    @apply block text-sm font-medium text-neutral-300 mb-1;
+  }
+
+  .checkbox-base {
+    @apply h-4 w-4 text-primary caret-primary focus:ring-primary border-neutral-600 rounded transition-all duration-200 ease-in-out;
+  }
+
+  .checkbox-base:hover {
+    @apply border-neutral-500;
+  }
+
+  .checkbox-base:checked {
+    @apply bg-primary border-primary;
+  }
+
+  .checkbox-label {
+    @apply ml-2 block text-sm text-neutral-300;
+  }
 }

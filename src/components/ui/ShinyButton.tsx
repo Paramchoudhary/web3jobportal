@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
 
 interface IShinyButton {
-  text: string;
+  text?: string;
+  children?: React.ReactNode;
+  onClick?: () => void;
 }
 
-const ShinyButton = ({ text = "Empty" }: IShinyButton) => {
+const ShinyButton = ({ text = "Empty", children, onClick }: IShinyButton) => {
   return (
     <motion.button
       initial={{ "--x": "100%", scale: 1 }}
@@ -27,10 +29,11 @@ const ShinyButton = ({ text = "Empty" }: IShinyButton) => {
           duration: 0.3,
         },
       }}
-      className="px-6 py-2 rounded-full relative radial-gradient bg-primary"
+      onClick={onClick}
+      className="px-6 py-2 w-full rounded-full relative radial-gradient bg-primary"
     >
-      <span className="text-text tracking-wide font-light h-full w-full block relative linear-mask">
-        {text}
+      <span className="text-text flex justify-center items-center tracking-wide font-light h-full w-full relative linear-mask">
+        {children || text}
       </span>
       <span className="block absolute inset-0 rounded-full p-px linear-overlay" />
     </motion.button>

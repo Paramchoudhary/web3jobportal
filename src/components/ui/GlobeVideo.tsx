@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { FlipWords } from "@/components/ui/flip-word";
 import Badge from "./Badge";
 import ShinyButton from "./ShinyButton";
+import SearchInput from "./SearchInput";
 
 const GlobeVideo = () => {
   const words = ["Web3", "NFTs", "Blockchain", "Solidity", "DAOs"];
@@ -51,12 +52,13 @@ const GlobeVideo = () => {
               </motion.p>
             </div>
             <motion.div
-              className="mt-4"
+              className="mt-4 flex justify-center items-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.1 }}
             >
-              <ShinyButton text="Get Started" />
+              {/* <ShinyButton text="Get Started" /> */}
+              <SearchInput />
             </motion.div>
           </motion.div>
         </section>
