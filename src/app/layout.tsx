@@ -13,6 +13,8 @@ const chakra = Chakra_Petch({
 });
 const andika = Andika({
   subsets: ["latin"],
+  display: "swap",
+  variable: "--font-andika",
   weight: ["400", "700"],
 });
 
@@ -27,18 +29,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <meta
-        name="google-site-verification"
-        content="nhRfXle5OXFKWN-0DTxovy31T0P3Q6mAfVs845GnzZY"
-      />
-      <body
-        className={cn(
-          chakra.className,
-          // andika.className,
-          "bg-[#030014] overflow-y-scroll overflow-x-hidden"
-        )}
-      >
+    <html lang="en" className={`${andika.variable}`}>
+      <meta name="google-site-verification" content="nhRfXle5OXFKWN-0DTxovy31T0P3Q6mAfVs845GnzZY" />
+      <body className={cn(chakra.className, "bg-[#030014] overflow-y-scroll overflow-x-hidden")}>
         <StarsCanvas />
         <Navbar />
         <div className="px-2 md:p-0">{children}</div>

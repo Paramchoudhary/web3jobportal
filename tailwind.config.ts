@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss"
 
 const config: Config = {
   content: [
@@ -38,9 +38,12 @@ const config: Config = {
           to: { transform: "translateX(-50%)" },
         },
       },
+      fontFamily: {
+        andika: ["var(--font-andika)"],
+      },
     },
   },
   plugins: [],
-};
+}
 
-export default config;
+export default config
