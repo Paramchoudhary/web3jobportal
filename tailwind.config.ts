@@ -39,7 +39,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        andika: ["var(--font-andika)"],
+        roboto: ["var(--font-roboto)"],
       },
     },
   },
