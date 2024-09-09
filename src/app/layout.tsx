@@ -36,7 +36,7 @@ export default function RootLayout({
         className={cn(
           chakra.className,
           // andika.className,
-          "bg-[#030014] overflow-y-scroll overflow-x-hidden"
+          "bg-[#090016] overflow-y-scroll overflow-x-hidden"
         )}
       >
         <StarsCanvas />

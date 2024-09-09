@@ -8,6 +8,7 @@ import ContactForm from "@/components/ContactForm";
 import { Companies } from "@/components/Companies";
 import Faq from "@/components/Faq";
 import JobSection from "@/components/JobSection";
+import Testimonial from "@/components/Testimonails";
 
 const Globe = dynamic(
   () => import("@/components/ui/Globe").then((m) => m.Globe),
@@ -19,10 +20,13 @@ const Globe = dynamic(
 const HomePage = () => {
   return (
     <>
-      {/* <Globe /> */}
+      {/* <div className="py-24">
+        <Globe />
+      </div> */}
       <GlobeVideo />
       <JobSection />
       <Companies />
+      <Testimonial />
       <FeaturesSection />
       <Faq />
       <ContactForm />
