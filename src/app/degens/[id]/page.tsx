@@ -66,7 +66,7 @@ function Skills({ skill }: { skill: string }) {
 
 export default function Degens() {
   return (
-    <div className="pt-28 max-sm::px-2 px-8 text-white  rounded-b-3xl">
+    <div className="pt-28 max-sm:px-2 px-8 text-white  rounded-b-3xl">
       <div>
         <div className="p-4 sm:p-8 w-full flex max-sm::gap-6 flex-col sm:flex-row justify-center radial-gradient backdrop-blur-lg rounded-t-3xl">
           <div className="flex flex-col sm:w-[30%] gap-6 items-center justify-center text-center">
@@ -114,7 +114,7 @@ export default function Degens() {
           </div>
         </div>
       </div>
-      <div className="w-full pb-10 max-sm::p-7 p-8 flex flex-col gap-12 bg-neutral-950 text-white rounded-b-3xl">
+      <div className="w-full pb-10 max-sm:p-7 p-8 flex flex-col gap-12 bg-neutral-950 text-white rounded-b-3xl">
         <div className="flex justify-end">
           <div className="w-full sm:w-[70%] flex gap-6 font-bold">
             <span>About Me</span>
@@ -124,7 +124,7 @@ export default function Degens() {
         </div>
         <div className="flex flex-col sm:flex-row gap-4">
           <span className="text-3xl max-sm::w-full font-semibold w-[30%] text-white/70">About Me</span>
-          <div className="max-sm::w-full w-[70%] text-xl font-andika">
+          <div className="max-sm::w-full w-[70%] text-xl font-roboto">
             <span>{ProfileDetails.about}</span>
           </div>
         </div>
