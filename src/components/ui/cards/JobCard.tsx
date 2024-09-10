@@ -56,7 +56,7 @@ export default function JobCard({
 }: JobCardProps) {
   return (
     <motion.article
-      className="flex gap-3 rounded-lg border border-neutral-700 p-5 hover:bg-neutral-800 transition-colors duration-300 bg-background text-text"
+      className="flex gap-3 rounded-lg  p-5 transition-colors duration-300 bg-[#020817] text-text"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
