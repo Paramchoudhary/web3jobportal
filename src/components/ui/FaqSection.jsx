@@ -72,8 +72,7 @@ const questions = [
   {
     question: "How do I create a profile?",
     answer:
-      "To create a profile, click on the "Sign Up" button at the top right corner of the homepage. You can sign up using your email, Google account. Once registered, you can complete your profile by adding your skills, experience, and preferences.
-",
+      "To create a profile, click on the Sign Up button at the top right corner of the homepage. You can sign up using your email, Google account. Once registered, you can complete your profile by adding your skills, experience, and preferences",
   },
   {
     question: "Is it free to create a profile and apply for jobs?",
@@ -82,6 +81,6 @@ const questions = [
   },
   {
     question: "How do I post a job listing?",
-    answer: "To post a job, click on the "Post a Job" button on the homepage. You’ll be guided through a form to fill out the job details, select the features you want (e.g., featured listing, premium placement), and proceed to payment.",
+    answer: "To post a job, click on the Post a Job button on the homepage. You’ll be guided through a form to fill out the job details, select the features you want (e.g., featured listing, premium placement), and proceed to payment.",
   },
 ];
