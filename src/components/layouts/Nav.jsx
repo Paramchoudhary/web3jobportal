@@ -81,6 +81,14 @@ function Nav({ setSignupPopUp, isAuthenticated, setIsAuthenticated }) {
         <li className="desk">
           <Link to="/degens">Find degens</Link>
         </li>
+        <div class="dropdown">
+  <button class="dropbtn">Web3 Guides</button>
+  <div class="dropdown-content">
+  
+    <Link to="/Web3Roadmap">web3 Roadmap</Link>
+  
+  </div>
+</div>
         <li className="desk">
           <Link to="/">Jobs</Link>
         </li>
@@ -141,3 +149,4 @@ function Nav({ setSignupPopUp, isAuthenticated, setIsAuthenticated }) {
 }
 
 export default Nav;
+
