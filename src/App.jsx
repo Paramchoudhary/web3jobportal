@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Nav from "./components/layouts/Nav";
 import Home from "./components/pages/Home";
+import Web3Roadmap from "./components/pages/Blog1";
 import JobDetails from "./components/pages/JobDetails";
 import Footer from "./components/layouts/Footer";
 import Degens from "./components/pages/Degens";
@@ -73,12 +74,14 @@ function App() {
         />
         <Routes>
           <Route exact path="/" element={<Home />} />
+
           <Route
             exact
             path="degens"
             element={<Degens setSignupPopUp={setSignupPopUp} />}
           />
           <Route exact path="/degen/:id" element={<ViewDegen />} />
+          <Route exact path="/Web3Roadmap" element={<Web3Roadmap />} />
           <Route exact path="/complete-order" element={<CompleteListing />} />
           <Route
             exact
