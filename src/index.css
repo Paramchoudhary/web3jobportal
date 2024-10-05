@@ -8,6 +8,7 @@
   list-style: none;
   text-decoration: none;
 }
+
 /* 
    font-family: "Inter", sans-serif;
     font-family: "Chakra Petch", sans-serif;
@@ -17,6 +18,7 @@ font-family: "Andika", sans-serif;
   font-family: mona;
   src: url("/fonts/Mona.ttf");
 }
+
 @font-face {
   font-family: SemiBoldItalic;
   src: url("/fonts/Mona-Sans-SemiBoldItalic.ttf");
@@ -46,17 +48,21 @@ html {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 body {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 body {
   background: var(--bg);
 }
+
 body.active {
   height: 100vh;
   overflow: hidden;
 }
+
 .container {
   width: 100%;
   height: auto;
@@ -76,11 +82,13 @@ body.active {
   position: relative;
   /* border: 2px solid; */
 }
+
 .container nav ul {
   display: flex;
   align-items: center;
   gap: 4em;
 }
+
 .container nav ul li {
   display: flex;
   align-items: center;
@@ -92,7 +100,7 @@ body.active {
 /* Dropdown Button */
 .dropbtn {
   background-color: transparent;
-  color: rgb(255, 255, 255);
+  color: var(--text);
   padding: 16px;
   font-size: 16px;
   border: none;
@@ -111,29 +119,36 @@ body.active {
   color: #fff;
   background-color: transparent;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  color: rgb(250, 250, 250);
+  color: var(--text);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-font-size: 15px;
- font-family:mona;
+  font-size: 15px;
+  font-family: mona;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #686c6f;}
+.dropdown-content a:hover {
+  background-color: #686c6f;
+}
 
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: transparent;}
- /* helloo dropdown */
+.dropdown:hover .dropbtn {
+  background-color: transparent;
+}
+
+/* helloo dropdown */
 .container nav ul li a {
   font-size: 1.6em;
   font-weight: 500;
@@ -141,16 +156,20 @@ font-size: 15px;
   font-family: "Chakra Petch", sans-serif;
   transition: color 500ms ease-in-out;
 }
+
 .container nav ul li .arr {
   font-size: 1.6em;
   transition: color 500ms ease-in-out;
 }
+
 .container nav ul li:hover a {
   color: var(--highlight);
 }
+
 .container nav ul li.user:hover a {
   color: var(--text);
 }
+
 .container nav .logo {
   display: flex;
   align-items: center;
@@ -186,10 +205,12 @@ font-size: 15px;
   transition: 500ms ease-in-out;
   /* border: 2px solid var(--text); */
 }
+
 .container nav .profileCont.active {
   transform: translateX(0%);
   opacity: 1;
 }
+
 .container nav .profileCont li a {
   width: 100%;
   display: flex;
@@ -200,17 +221,21 @@ font-size: 15px;
   margin: 1em auto;
   transition: color 500ms ease-in-out;
 }
+
 .container nav .profileCont li a .icon {
   font-size: 1em;
   color: var(--text);
   transition: color 500ms ease-in-out;
 }
+
 .container nav .profileCont li:hover a .icon {
   color: var(--highlight);
 }
+
 .container nav .profileCont li:hover a span {
   color: var(--highlight);
 }
+
 .container nav .profileCont li .btn {
   width: 50%;
   display: flex;
@@ -233,6 +258,7 @@ font-size: 15px;
   min-height: 70px;
   margin-top: 4em;
 }
+
 .container footer .logo {
   font-size: 2.4em;
   color: var(--text);
@@ -244,6 +270,7 @@ font-size: 15px;
   display: flex;
   gap: 4em;
 }
+
 .container footer ul li a {
   font-family: "Chakra Petch", sans-serif;
   font-size: 1.4em;
@@ -251,6 +278,7 @@ font-size: 15px;
   font-weight: 600;
   transition: color 500ms ease-in-out;
 }
+
 .container footer ul:last-child li a {
   font-size: 2em;
 }
@@ -343,28 +371,34 @@ font-size: 15px;
     background: var(--bg);
     z-index: 9999;
   }
+
   .container nav .logo {
     font-size: 1.4em;
     gap: 1em;
   }
+
   .container nav .menuBtn {
     display: flex;
     flex-direction: column;
     gap: 0.2em;
     cursor: pointer;
   }
+
   .container nav .menuBtn span {
     width: 25px;
     display: block;
     transition: 500ms ease-in-out;
     border: 1.5px solid var(--text);
   }
+
   .container nav .menuBtn span:nth-child(2) {
     width: 18px;
   }
+
   .container nav .menuBtn span:last-child {
     width: 12px;
   }
+
   .container nav ul li.desk {
     position: absolute;
     left: 0%;
@@ -378,6 +412,7 @@ font-size: 15px;
     transform-origin: left;
     transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
   }
+
   .container nav ul li.desk {
     position: absolute;
     left: 0%;
@@ -393,11 +428,13 @@ font-size: 15px;
     transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
     transition-delay: 200ms;
   }
+
   .container nav.active ul li:first-child,
   .container nav.active ul li:nth-child(2) {
     opacity: 1;
     transform: scale3d(1, 1, 1);
   }
+
   .container nav.active .menuBtn span:first-child {
     width: 25px;
     border-color: var(--highlight);
@@ -407,6 +444,7 @@ font-size: 15px;
   .container nav.active .menuBtn span:nth-child(2) {
     opacity: 0;
   }
+
   .container nav.active .menuBtn span:last-child {
     width: 25px;
     border-color: var(--highlight);
@@ -418,6 +456,7 @@ font-size: 15px;
     min-height: 100px;
     right: 0%;
   }
+
   .container nav .profileCont .profileCont li a {
     font-size: 1em;
     color: var(--text);
@@ -434,6 +473,7 @@ font-size: 15px;
     margin-top: 4em;
     flex-direction: column;
   }
+
   .container footer .logo {
     font-size: 2.4em;
     color: var(--text);
@@ -450,9 +490,11 @@ font-size: 15px;
     gap: 2em;
     margin: 1.5em auto;
   }
+
   .container footer ul li a {
     font-size: 1.2em;
   }
+
   .container footer ul:last-child li a {
     font-size: 2em;
   }
@@ -465,6 +507,7 @@ font-size: 15px;
     display: none;
   }
 }
+
 /* blog */
 
 
