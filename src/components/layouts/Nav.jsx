@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { MdShield } from "react-icons/md";
 import { CiSettings } from "react-icons/ci";
 import { LiaSignOutAltSolid } from "react-icons/lia";
+import CustomConnectButton from "../ui/CustomConnectButton";
 
 function Nav({ setSignupPopUp, isAuthenticated, setIsAuthenticated }) {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -82,13 +83,11 @@ function Nav({ setSignupPopUp, isAuthenticated, setIsAuthenticated }) {
           <Link to="/degens">Find degens</Link>
         </li>
         <div class="dropdown">
-  <button class="dropbtn">Web3 Guides</button>
-  <div class="dropdown-content">
-  
-    <Link to="/Web3Roadmap">web3 Roadmap</Link>
-  
-  </div>
-</div>
+          <button class="dropbtn">Web3 Guides</button>
+          <div class="dropdown-content">
+            <Link to="/Web3Roadmap">web3 Roadmap</Link>
+          </div>
+        </div>
         <li className="desk">
           <Link to="/">Jobs</Link>
         </li>
@@ -135,12 +134,7 @@ function Nav({ setSignupPopUp, isAuthenticated, setIsAuthenticated }) {
               </ul>
             </>
           ) : (
-            <button
-              className="login-button"
-              onClick={() => setSignupPopUp(true)}
-            >
-              Login
-            </button>
+            <CustomConnectButton />
           )}
         </li>
       </ul>
@@ -149,4 +143,3 @@ function Nav({ setSignupPopUp, isAuthenticated, setIsAuthenticated }) {
 }
 
 export default Nav;
-
